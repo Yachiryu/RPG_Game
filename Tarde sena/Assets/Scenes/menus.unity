@@ -653,7 +653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &172410722
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1195,7 +1195,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2501,8 +2501,8 @@ RectTransform:
   m_Father: {fileID: 596015258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5833,7 +5833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1913757266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6224,14 +6224,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " <color=\"red\"> Codigo:\r </color>\nSantiago\r\nWalter\r\nDeyan\r\nEvelyn\r\n\r\n
-    <color=\"red\"> UI:\r </color>\nAndres\r\nAbraham\r\nJuan David\r\n\r\n <color=\"red\">
-    Mapa:\r </color>\nEmanuel\r\nDavid\r\nJesus\r\nValentina\r\n\r\n <color=\"red\">
-    \nAnimacion:\r </color>\nJuan Pablo\r\nStuart\r\nSamid\r\n\r\n <color=\"red\">
-    Documentacion y EXP de usuario:\r </color>\nJulian\r\nRicardo\r\nDaniel\r\n\r\n
-    <color=\"red\"> Lideres:\r </color>\nSantiago - Codigo\r\nAndres- UI\r\nJesus
-    - Mapeado\r\nJuan Pablo - Animacion \r\nRicardo - Documentacion \r\n\r\n <color=\"red\">
-    Agradecimientos especiales:\r </color>\nHernan Perez - Contribuidor de los assets\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGRACIAS
+  m_text: " <color=\"red\"> Codigo:\r </color>\nSantiago\r\nWalter\r\nDeyan\r\nEvelyn\r\n\r\n<color=\"red\">
+    UI:\r </color>\nAndres\r\nAbraham\r\nJuan David\r\n\r\n <color=\"red\"> Mapa:\r
+    </color>\nEmanuel\r\nDavid\r\nJesus\r\nValentina\r\n\r\n <color=\"red\"> \nAnimacion:\r
+    </color>\nJuan Pablo\r\nStuart\r\nSamid\r\n\r\n <color=\"red\"> Documentacion
+    y EXP de usuario:\r </color>\nJulian\r\nRicardo\r\nDaniel\r\n\r\n<color=\"red\">
+    Lideres:\r </color>\nSantiago - Codigo\r\nAndres- UI\r\nJesus - Mapeado\r\nJuan
+    Pablo - Animacion \r\nRicardo - Documentacion \r\n\r\n <color=\"red\"> Agradecimientos
+    especiales:\r </color>\nHernan Perez - Contribuidor de los assets\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGRACIAS
     POR JUGAR!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d34ac72a1e88f1d4f96076e08f54298f, type: 2}
