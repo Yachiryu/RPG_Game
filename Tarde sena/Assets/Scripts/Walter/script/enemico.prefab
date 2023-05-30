@@ -1718,6 +1718,7 @@ GameObject:
   - component: {fileID: 846649440718440869}
   - component: {fileID: 783701028455838338}
   - component: {fileID: 783701028455838341}
+  - component: {fileID: -5114914360518993676}
   m_Layer: 0
   m_Name: enemico
   m_TagString: Enemigo
@@ -1744,7 +1745,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &846649440718440869
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1761,7 +1762,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &783701028455838338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,7 +1770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786607530566516619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33ea45ae216fc8246887f8097d2e6f60, type: 3}
   m_Name: 
@@ -1782,6 +1783,8 @@ MonoBehaviour:
   damage: 5
   player: {fileID: 0}
   atacando: 0
+  vida: 0
+  remanager: {fileID: 0}
 --- !u!65 &783701028455838341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1795,6 +1798,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5558305, y: 1.2904744, z: 0.529902}
   m_Center: {x: 0.0009934902, y: 1.0270698, z: -0.034909725}
+--- !u!114 &-5114914360518993676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786607530566516619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barravida: {fileID: 0}
 --- !u!1 &786612365168326403
 GameObject:
   m_ObjectHideFlags: 0
