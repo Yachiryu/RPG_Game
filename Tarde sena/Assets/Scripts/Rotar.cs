@@ -6,7 +6,7 @@ public class Rotar : MonoBehaviour
 {
     [SerializeField] internal float velocidadRotacion;
     [SerializeField] internal EjeRotacion ejeRotacion;
-
+    [SerializeField] float anguloLimite;
     void Update()
     {
         switch (ejeRotacion)
