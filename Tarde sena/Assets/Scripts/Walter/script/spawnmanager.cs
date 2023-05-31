@@ -4,64 +4,69 @@ using UnityEngine;
 
 public class spawnmanager : MonoBehaviour
 {
-    public GameObject[] spawnpoints;
-    public GameObject[] enemys;
-    public int waveCount,wave;
-    public int enemiType;
-    public bool spawnting;
-    public int enemisPawned;
-    private remanager remanager;
-    public GameObject nose;
+ 
+    public generador[] spawnpoints;
+    public GameObject boss;
+    bool inicioOleada = true;
 
-    // Start is called before the first frame update
     void Start()
     {
-        waveCount = 2;
-        wave = 1;
-        spawnting = false;
-        enemisPawned = 0;
-        nose = GameObject.Find("remanager");
+        GameManager.Instance.OnEnemySpawn += GenerarEnemigos;
+        spawnpoints = new generador[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            spawnpoints[i] = transform.GetChild(i).GetComponent<generador>();
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void GenerarEnemigos(object sender, GameManager.Etapa e)
     {
-        if (spawnting==false&& enemisPawned==remanager.defeatenemis)
+        foreach (generador item in spawnpoints)
         {
-            StartCoroutine(SpawnWave(waveCount));
+            if (item.transform.childCount == 0)
+            {
+                if (item.currentEnemigosSpawn > 0)
+                {
+                    if (!inicioOleada)
+                    {
+                        item.Spawnear(sender, e);
+                        break;
+                    }
+                    else
+                    {
+                        item.Spawnear(sender, e);
+                    }
+                }
+                else
+                {
+                    e.spawnVacio--;
+                    break;
+                }
+            }
         }
-    }
-    IEnumerator SpawnWave(int wave)
-    {
-        spawnting = true;
-        yield return new WaitForSeconds(4);
-        for (int i = 0; i < wave; i++)
-        {
-            Spawnenemis(wave);
-            yield return new WaitForSeconds(2);
-        }
-        wave += 1;
-        waveCount += 2;
-        spawnting = false;
-        yield break;
-    }
-    public void Spawnenemis(int wave)
-    {
-        int spawnPos = Random.Range(0, 4);
-        if (wave == 1)
-        {
-            enemiType = 1;
-        }
-        else if (wave <= 4)
-        {
-            enemiType = Random.Range(0, 2);
-        }
-        else
-        {
-            enemiType = Random.Range(0, 3);
-        }
+        inicioOleada = false;
 
-        Instantiate(enemys[enemiType], spawnpoints[spawnPos].transform.position, spawnpoints[spawnPos].transform.rotation);
-        enemisPawned += 1;
+        if (e.spawnVacio <= 0)
+        {
+            GameManager.Instance.etapa.cantidadEtapas--;
+            if (e.cantidadEtapas == 0)
+            {
+                GameObject newBoss = Instantiate(boss, transform.position, Quaternion.identity);
+                return;
+            }
+            inicioOleada = true;
+            foreach (generador item in spawnpoints)
+            {
+                item.currentEnemigosSpawn = e.currentEnemigosPorSpawn;
+            }
+            GameManager.Instance.Oleada(this, GameManager.Instance.etapa);
+
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnEnemySpawn -= GenerarEnemigos;
     }
 }

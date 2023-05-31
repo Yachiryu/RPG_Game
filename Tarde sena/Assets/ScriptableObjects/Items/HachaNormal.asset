@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b7b318debd7c48b8d409f8e7997a1, type: 3}
+  m_Name: HachaNormal
+  m_EditorClassIdentifier: 
+  iD: 0
+  nombre: Hcaha Normal
+  description: La hacha mas normal de todas
+  porcentajeDeSalida: 3
+  regeneracionVida: 0
+  objetoAsociado: {fileID: 0}
+  icon: {fileID: 21300000, guid: 899c91721443cc34985198fe2b58cf67, type: 3}
+  type: 0
+  materialsToCraft:
+  - material: {fileID: 11400000, guid: 173e8ec434d26d44abcced2d4a2d39f4, type: 2}
+    cantidad: 1
+  - material: {fileID: 11400000, guid: e3373de8c7346534ba4676218d643829, type: 2}
+    cantidad: 6
+  - material: {fileID: 11400000, guid: 4b8da76d543b1c74eb45066156b16109, type: 2}
+    cantidad: 6

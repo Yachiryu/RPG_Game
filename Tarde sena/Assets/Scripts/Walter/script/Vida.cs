@@ -5,30 +5,38 @@ using UnityEngine.UI;
 
 public class Vida : MonoBehaviour
 {
-    public int vida=100;
+    public int vida = 100;
     public Slider barravida;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        StartCoroutine(Mientras());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Mientras()
     {
-        barravida.GetComponent<Slider>().value = vida;
+        yield return new WaitForSeconds(5);
+        Danio(100);
+    
+    }
 
-        if (vida<=0)
+    public void Danio(int danio)
+    {
+        vida -= danio;
+        if (vida <= 0)
         {
-            Debug.Log("Muelto");
+            transform.parent = null;
+            GameManager.Instance.ControlSpawnEnemigos(this, GameManager.Instance.etapa);
+            Destroy(gameObject, 0.5f);//colocar tiempo de cuando muere
+
         }
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag==("Peligro"))
-        {
-            vida--;
-        }
-    }
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == ("Peligro"))
+    //    {
+    //        vida--;
+    //    }
+    //}
 }

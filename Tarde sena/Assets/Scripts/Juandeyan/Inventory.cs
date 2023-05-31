@@ -9,42 +9,56 @@ public class Inventory : MonoBehaviour
 
     public GameObject inventory;
 
+    public GameObject weaponManager;
     private int allSlots;
 
+    private int[] allSlot;
     private int enabledSlots;
 
-    [SerializeField]private GameObject[] slot;
-
-    public GameObject slotHolder;
+    private ItemProperties.Tipo[] tipoSlot;
+    public Dictionary<ItemProperties.Tipo, GameObject[]> slots;
+    
+    public GameObject[] slotHolders;
+    private const int maxNumberObj = 10;
 
     void Start()
     {
-        allSlots = slotHolder.transform.childCount;
+        slots = new Dictionary<ItemProperties.Tipo, GameObject[]>();
+        allSlot = new int[slotHolders.Length];
+        
+        tipoSlot = (ItemProperties.Tipo[])System.Enum.GetValues(typeof(ItemProperties.Tipo));
 
-        slot = new GameObject[allSlots];
-
-        for (int i = 0; i < allSlots; i++)
+        for (int i = 0; i < slotHolders.Length; i++)
         {
-            slot[i] = slotHolder.transform.GetChild(i).gameObject;
+            allSlot[i] = slotHolders[i].transform.childCount;
+            slots.Add(tipoSlot[i], new GameObject[allSlot[i]]);
+        }
 
-            if (slot[i].GetComponent<Slot>().item == null)
+        for (int i = 0; i < allSlot.Length; i++)
+        {
+            for (int j = 0; j < allSlot[i]; j++)
             {
-                slot[i].GetComponent<Slot>().empty = true;
+                slots[tipoSlot[i]][j] = slotHolders[i].transform.GetChild(j).gameObject;
+
+                if (slots[tipoSlot[i]][j].GetComponent<Slot>().item == null)
+                {
+                    slots[tipoSlot[i]][j].GetComponent<Slot>().empty = true;
+                }
             }
         }
     }
 
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
-        { 
+        {
             inventoryEnabled = !inventoryEnabled;
         }
 
         if (inventoryEnabled)
         {
-            inventory.SetActive(true); 
+            inventory.SetActive(true);
         }
         else
         {
@@ -56,39 +70,89 @@ public class Inventory : MonoBehaviour
     {
         if (other.tag == "Item")
         {
-            print("Hola");
             GameObject itemPickedUp = other.gameObject;
-
             Item item = itemPickedUp.GetComponent<Item>();
+            AddItem(item.itemProperties, item.objeto);
 
-            AddItem(itemPickedUp, item.iD, item.type, item.description, item.icon);
         }
     }
 
-    public void AddItem(GameObject itemObject, int itemID, string itemType,string itemDescription, Sprite itemIcon)
+    public void AddItem(ItemProperties item, GameObject itemObject = null )
     {
-        for (int i = 0; i < allSlots; i++)
+
+
+        for (int i = 0; i < slots[item.type].Length; i++)
         {
-            Slot slotAdd = slot[i].GetComponent<Slot>();
 
-            if (slotAdd.empty)
+            Slot slotAdd = slots[item.type][i].GetComponent<Slot>();
+
+            if (slotAdd.slotProperties.nombre == item.nombre && slotAdd.numberOfObjects < maxNumberObj)
             {
-                itemObject.GetComponent<Item>().pickedUp = true;
+                slotAdd.numberOfObjects++;
+                if (itemObject != null)
+                {
+                    Destroy(itemObject);
+                }
+                slotAdd.UpdateNumberObj();
+                print($"El mismo {slotAdd.numberOfObjects}");
+                break;
+            }
+            else if (slotAdd.empty)
+            {
+                print("Empty");
+                slotAdd.slotProperties = item;
+                slotAdd.numberOfObjects++;
 
-                slotAdd.item = itemObject;
-                slotAdd.iD = itemID;
-                slotAdd.type = itemType;
-                slotAdd.description = itemDescription;
-                slotAdd.icon = itemIcon;
-
-                itemObject.transform.parent = slot[i].transform;
-                itemObject.SetActive(false);
+                if (itemObject!=null)
+                {
+                    Destroy(itemObject);
+                }
 
                 slotAdd.UpdateSlot();
+                slotAdd.UpdateNumberObj();
 
                 slotAdd.empty = false;
                 break;
             }
+        }
+    }
+
+   
+    public void RemoveItem(ItemProperties item)
+    {
+        for (int i = 0; i < slots[item.type].Length; i++)
+        {
+            Slot slotAdd = slots[item.type][i].GetComponent<Slot>();
+
+            if (slotAdd.slotProperties.nombre == item.nombre)
+            {
+                if (slotAdd.numberOfObjects > 1)
+                {
+                    slotAdd.numberOfObjects--;
+                    slotAdd.UpdateNumberObj();
+                    break;
+                }
+                else
+                {
+                    slotAdd.slotProperties = slotAdd.slotVacio;
+                    slotAdd.UpdateSlot();
+                    slotAdd.UpdateNumberObj();
+                    break;
+                }
+            }
+        }
+    }
+
+    public void UseItem(ItemProperties item)
+    {
+        switch (item.type)
+        {
+            case ItemProperties.Tipo.weapon:
+                break;
+            case ItemProperties.Tipo.resources:
+                break;
+            case ItemProperties.Tipo.item:
+                break;
         }
     }
 }

@@ -5,33 +5,25 @@ using UnityEngine;
 public class generador : MonoBehaviour
 {
     public GameObject[] enemisPrefb;
+    public int currentEnemigosSpawn;
     public GameObject zonaspawn;
     public bool activo=false;
-    
-    // Start is called before the first frame update
+
+
     void Start()
     {
-        
+        currentEnemigosSpawn = GameManager.Instance.etapa.enemigosPorSpawn;
     }
 
-    // Update is called once per frame
-    void Update()
+  
+    public void Spawnear(object sender, GameManager.Etapa e)
     {
-        GenerarEnemigos();
-    }
-    void GenerarEnemigos()
-    {
+        currentEnemigosSpawn--;
         int aleatorio = Random.Range(0, enemisPrefb.Length);
-        if (activo==true)
-        {
-            
-            Instantiate(enemisPrefb[aleatorio],zonaspawn.transform.parent);
-            activo = false;
-        }
-        
+        GameObject currentEnemy = Instantiate(enemisPrefb[aleatorio], transform.position, Quaternion.identity);
+        currentEnemy.transform.parent = transform;
+  
     }
-    public void OnTriggerEnter(Collider other)
-    {
-        activo = true;
-    }
+
+ 
 }

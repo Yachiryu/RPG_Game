@@ -14,18 +14,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]internal int esperaDuracionOleadasSeg;// duracionOleadasMin, duracionOleadasSeg;// cantidadEtapas;
     [SerializeField]internal Etapa etapa;
 
-    [Header("Eventos")]
-    public UnityEvent OnCronometro;
+ 
     public event EventHandler<Dialogos.Texto> OnDialogo; 
-    public event EventHandler<Etapa> OnEnemySpawn; 
+    public event EventHandler<Etapa> OnEnemySpawn;
+    public event EventHandler<Etapa> OnOleada;
 
-    
     internal bool enDialogo;
 
-    
+
     private void Awake()
     {
-        etapa.cantidadEtapas *= 2;
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -34,11 +32,18 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
     }
 
     private void Start()
     {
-        OnCronometro?.Invoke();
+        StartCoroutine(COleada());
+    }
+
+    IEnumerator COleada()
+    {
+        yield return new WaitForSeconds(2f);
+        Oleada(this, etapa);
     }
 
     public void DialogoDuranteJuego(object sender, Dialogos.Texto e)//Funcion que invoca los dialogos
@@ -50,20 +55,31 @@ public class GameManager : MonoBehaviour
     {
         OnEnemySpawn?.Invoke(sender, e);
     }
+    public void Oleada(object sender, Etapa e)//Funcion que invoca las Oleadas
+    {
+        etapa.enEspera = true;
+        etapa.spawnVacio = etapa.spawns.childCount;
+        etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
+        OnOleada?.Invoke(sender, e);
+        //if (e.cantidadEtapas > 0)
+        //{
+        //    OnOleada?.Invoke(sender, e);
+        //    etapa.spawnVacio = etapa.spawns.childCount;
+        //    etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
+        //}
+    }
+
+
 
     [System.Serializable]
     public class Etapa : EventArgs
     {
-        public int cantidadEtapas, enemigosPorSpawn;
-       
-        public bool BoolEstapa()
-        {
-            if (cantidadEtapas % 2 == 0)
-                return false;
-            else
-                return true;
-        }
+        public int cantidadEtapas, enemigosPorSpawn, spawnVacio;
+        internal int currentEnemigosPorSpawn;
+        public Transform spawns;
+        internal bool enEspera;
     }
+
 
 }
 

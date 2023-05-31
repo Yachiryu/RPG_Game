@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b7b318debd7c48b8d409f8e7997a1, type: 3}
+  m_Name: MazoNormal
+  m_EditorClassIdentifier: 
+  iD: 0
+  nombre: Mazo Normal
+  description: El mazo mas normal de todos
+  porcentajeDeSalida: 3
+  regeneracionVida: 0
+  objetoAsociado: {fileID: 0}
+  icon: {fileID: 21300000, guid: ac7160d4e13323346ab404b43dd20b69, type: 3}
+  type: 0
+  materialsToCraft:
+  - material: {fileID: 11400000, guid: 11a4fc4439497344eb9950f39117da0c, type: 2}
+    cantidad: 1
+  - material: {fileID: 11400000, guid: e3373de8c7346534ba4676218d643829, type: 2}
+    cantidad: 8
+  - material: {fileID: 11400000, guid: 4b8da76d543b1c74eb45066156b16109, type: 2}
+    cantidad: 8
+  - material: {fileID: 11400000, guid: db6f797ff8111334fbaf30c077bdad88, type: 2}
+    cantidad: 8
