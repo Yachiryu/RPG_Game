@@ -6,24 +6,14 @@ public class generador : MonoBehaviour
 {
     public GameObject[] enemisPrefb;
     public int currentEnemigosSpawn;
-    public GameObject zonaspawn;
-    public bool activo=false;
+    public bool boss;
 
-
-    void Start()
-    {
-        currentEnemigosSpawn = GameManager.Instance.etapa.enemigosPorSpawn;
-    }
-
-  
-    public void Spawnear(object sender, GameManager.Etapa e)
+    public void Spawnear()
     {
         currentEnemigosSpawn--;
         int aleatorio = Random.Range(0, enemisPrefb.Length);
         GameObject currentEnemy = Instantiate(enemisPrefb[aleatorio], transform.position, Quaternion.identity);
         currentEnemy.transform.parent = transform;
-  
     }
 
- 
 }

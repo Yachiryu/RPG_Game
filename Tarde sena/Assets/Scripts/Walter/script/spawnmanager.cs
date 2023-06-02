@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class spawnmanager : MonoBehaviour
 {
- 
     public generador[] spawnpoints;
+
     public GameObject boss;
     bool inicioOleada = true;
 
+    int bossIndex;
     void Start()
     {
         GameManager.Instance.OnEnemySpawn += GenerarEnemigos;
@@ -16,8 +17,12 @@ public class spawnmanager : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             spawnpoints[i] = transform.GetChild(i).GetComponent<generador>();
-
+            if (spawnpoints[i].boss)
+            {
+                bossIndex = i;
+            }
         }
+        RellearSpawnPoints();
     }
 
     void GenerarEnemigos(object sender, GameManager.Etapa e)
@@ -30,12 +35,16 @@ public class spawnmanager : MonoBehaviour
                 {
                     if (!inicioOleada)
                     {
-                        item.Spawnear(sender, e);
-                        break;
+                        if (!item.boss)
+                        {
+                            item.Spawnear();
+                            break;
+                        }
                     }
                     else
                     {
-                        item.Spawnear(sender, e);
+                        if (!item.boss)
+                            item.Spawnear();
                     }
                 }
                 else
@@ -45,28 +54,43 @@ public class spawnmanager : MonoBehaviour
                 }
             }
         }
+        if (e.spawnVacio == 1)
+        {
+            if (e.cantidadEtapas == 1)
+            {
+                //spawnpoints[bossIndex].enemisPrefb[0].GetComponent<Vida>().jefe = true;
+                spawnpoints[bossIndex].Spawnear();
+            }
+            else
+            {
+                e.spawnVacio--;
+            }
+        }
+
         inicioOleada = false;
 
         if (e.spawnVacio <= 0)
         {
-            GameManager.Instance.etapa.cantidadEtapas--;
-            if (e.cantidadEtapas == 0)
-            {
-                GameObject newBoss = Instantiate(boss, transform.position, Quaternion.identity);
-                return;
-            }
             inicioOleada = true;
-            foreach (generador item in spawnpoints)
-            {
-                item.currentEnemigosSpawn = e.currentEnemigosPorSpawn;
-            }
+            RellearSpawnPoints();
+            GameManager.Instance.etapa.cantidadEtapas--;
             GameManager.Instance.Oleada(this, GameManager.Instance.etapa);
-
         }
     }
 
-    private void OnDestroy()
+    void RellearSpawnPoints()
     {
-        GameManager.Instance.OnEnemySpawn -= GenerarEnemigos;
+        foreach (generador item in spawnpoints)
+        {
+            if (item.boss)
+            {
+                //item.enemisPrefb[0].GetComponent<Vida>().jefe = false;
+                item.currentEnemigosSpawn = 1;
+            }
+            else
+            {
+                item.currentEnemigosSpawn = GameManager.Instance.etapa.enemigosPorSpawn;
+            }
+        }
     }
 }

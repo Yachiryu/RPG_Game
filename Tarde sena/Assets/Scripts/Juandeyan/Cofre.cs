@@ -5,10 +5,10 @@ using UnityEngine;
 public class Cofre : MonoBehaviour
 {
     public ItemProperties[] objectsOfRandomChest;
-    public ItemProperties[] objetosFijos;
     [SerializeField] private int maxObjects;
-    [SerializeField] private bool boss;
+    public bool boss;
     List<int> objetos = new List<int>();
+    public ItemProperties[] objetosFijos;
 
     public MeshCofre meshBossCofre;
     bool cofreAbierto;
@@ -17,12 +17,12 @@ public class Cofre : MonoBehaviour
 
     private void Start()
     {
+        //cofreAbierto = true;
         maxObjects = Mathf.Clamp(maxObjects, 1, objectsOfRandomChest.Length);
         if (boss)
         {
             GetComponent<MeshFilter>().mesh = meshBossCofre.meshCofre;
             transform.GetChild(0).GetComponent<MeshFilter>().mesh = meshBossCofre.meshTapaCofre;
-            //GetComponentInChildren<MeshFilter>().mesh = meshBossCofre.meshTapaCofre;
         }
         GameManager.Instance.OnOleada += AbrirCofre;
     }
@@ -36,10 +36,8 @@ public class Cofre : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        print("Cofre0");
         if (other.tag == "Player" && Input.GetButtonDown("Interaction") && cofreAbierto)
         {
-            print("Cofre");
             cofreAbierto = false;
 
             if (boss)
@@ -49,8 +47,6 @@ public class Cofre : MonoBehaviour
                     other.GetComponent<Inventory>().AddItem(item);
                 }
             }
-
-
 
             while (objetos.Count < maxObjects)
             {
@@ -67,30 +63,26 @@ public class Cofre : MonoBehaviour
                 objetos.Add(numberRandomOfList);
             }
 
-            foreach (var item in objetos)
-            {
-                print(item);
-
-            }
-            print($"cantidad {objetos.Count}");
-
-
-            //print(Mathf.CeilToInt(100f / objectsOfRandomChest[numberRandomOfList].porcentajeDeSalida));
+            bool darObjeto = false;
 
             for (int i = 0; i < objetos.Count; i++)
             {
                 int numberRandom = Random.Range(0, Mathf.CeilToInt(100f / objectsOfRandomChest[objetos[i]].porcentajeDeSalida));
                 if (numberRandom == 0)
                 {
-                    other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[objetos[i]]);
-                }
-                else
-                {
-                    objetos.Remove(i);
+                    darObjeto = true;
+                    int num = Random.Range(1, 4);
+                    for (int j = 0; j < num; j++)
+                    {
+                        other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[objetos[i]]);
+                    }
                 }
             }
-
-
+            if (!darObjeto)
+            {
+                other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[0]);
+            }
+            objetos.RemoveRange(0, objetos.Count);
         }
     }
 
