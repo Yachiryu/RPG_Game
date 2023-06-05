@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         etapa.enEspera = true;
         etapa.spawnVacio = etapa.spawns.childCount;
-        //etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
+        etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
         OnOleada?.Invoke(sender, e);
         //if (e.cantidadEtapas > 0)
         //{
@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     public class Etapa : EventArgs
     {
         public int cantidadEtapas, enemigosPorSpawn, spawnVacio;
+        internal int currentEnemigosPorSpawn;
         public Transform spawns;
         internal bool enEspera;
     }

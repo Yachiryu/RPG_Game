@@ -7,6 +7,8 @@ using TMPro;
 public class Slot : MonoBehaviour
 {
     public GameObject item;
+    public GameObject panelCraft;
+
     //public int iD;
     //public string type;
     //public string nombre;
