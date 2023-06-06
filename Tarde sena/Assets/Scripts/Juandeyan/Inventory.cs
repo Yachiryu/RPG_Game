@@ -117,7 +117,6 @@ public class Inventory : MonoBehaviour
 
                 slotAdd.UpdateSlot();
                 slotAdd.UpdateNumberObj();
-
                 slotAdd.empty = false;
                 break;
             }
@@ -144,6 +143,7 @@ public class Inventory : MonoBehaviour
                     else
                     {
                         slotAdd.slotProperties = slotAdd.slotVacio;
+
                         slotAdd.UpdateSlot();
                         slotAdd.UpdateNumberObj();
                         break;
