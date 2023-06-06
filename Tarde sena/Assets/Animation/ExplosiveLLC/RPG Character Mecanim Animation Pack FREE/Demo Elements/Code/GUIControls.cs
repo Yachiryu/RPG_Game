@@ -211,7 +211,17 @@ namespace RPGCharacterAnims
 					switchWeaponContext.leftWeapon = Weapon.Unarmed;
 					switchWeaponContext.rightWeapon = Weapon.Unarmed;
 				}
+
+				if (Input.GetButton("SwitchUpDown"))
+				{
+					doSwitch = true;
+					switchWeaponContext.type = "Switch";
+					switchWeaponContext.side = "Both";
+					switchWeaponContext.leftWeapon = Weapon.Unarmed;
+					switchWeaponContext.rightWeapon = Weapon.Unarmed;
+				}
 			}
+
 			var offset = 310;
 
 			// TwoHanded weapon.
@@ -227,7 +237,7 @@ namespace RPGCharacterAnims
 						switchWeaponContext.rightWeapon = weapon;
 					}
 				}
-				offset += 30;
+					offset += 30;
 			}
 			// Instant weapon toggle.
 			useInstant = GUI.Toggle(new Rect(1000, 310, 100, 30), useInstant, "Instant");

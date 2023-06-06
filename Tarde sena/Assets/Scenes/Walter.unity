@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -464,6 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemisPrefb:
   - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
+  currentEnemigosSpawn: 0
   zonaspawn: {fileID: 1360149491}
   activo: 0
 --- !u!4 &320768309
@@ -581,17 +582,7 @@ MonoBehaviour:
   - {fileID: 867401655}
   - {fileID: 1041996652}
   - {fileID: 101458658}
-  enemys:
-  - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
-  - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
-  - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
-  - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
-  waveCount: 0
-  wave: 0
-  enemiType: 0
-  spawnting: 0
-  enemisPawned: 0
-  nose: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!4 &957040290
 Transform:
   m_ObjectHideFlags: 0
@@ -859,7 +850,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1063,7 +1054,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1220,7 +1211,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1802,7 +1793,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!95 &7430791772272415610
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1819,7 +1810,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!137 &7430791772276718086
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
