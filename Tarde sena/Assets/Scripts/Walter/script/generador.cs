@@ -6,24 +6,26 @@ public class generador : MonoBehaviour
 {
     public GameObject[] enemisPrefb;
     public int currentEnemigosSpawn;
-    public GameObject zonaspawn;
-    public bool activo=false;
+    [Tooltip("Activar si este Generador contendra un Boss")]
+    public bool boss;
+    internal bool spawnBloqueado;
 
-
-    void Start()
-    {
-        currentEnemigosSpawn = GameManager.Instance.etapa.enemigosPorSpawn;
-    }
-
-  
-    public void Spawnear(object sender, GameManager.Etapa e)
+    public void Spawnear()
     {
         currentEnemigosSpawn--;
         int aleatorio = Random.Range(0, enemisPrefb.Length);
         GameObject currentEnemy = Instantiate(enemisPrefb[aleatorio], transform.position, Quaternion.identity);
         currentEnemy.transform.parent = transform;
-  
     }
 
- 
+    public IEnumerator CSpawnear(float seconds)
+    {
+        seconds *= 60;
+        yield return new WaitForSeconds(seconds);
+        currentEnemigosSpawn--;
+        int aleatorio = Random.Range(0, enemisPrefb.Length);
+        GameObject currentEnemy = Instantiate(enemisPrefb[aleatorio], transform.position, Quaternion.identity);
+        currentEnemy.transform.parent = transform;
+    }
 }
+

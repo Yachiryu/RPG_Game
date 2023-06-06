@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        etapa.cantidadEtapas = etapa.spawnsManagers.Length;
         StartCoroutine(COleada());
     }
 
@@ -57,8 +58,19 @@ public class GameManager : MonoBehaviour
     }
     public void Oleada(object sender, Etapa e)//Funcion que invoca las Oleadas
     {
+        for (var i = 0; i < etapa.spawnsManagers.Length; i++)
+        {
+            if (i == etapa.spawnsManagers.Length - etapa.cantidadEtapas)
+            {
+                etapa.spawnsManagers[i].GetComponent<spawnmanager>().EventSubscribe(true);
+                etapa.spawnVacio = etapa.spawnsManagers[i].transform.childCount;
+            }
+            else
+            {
+                etapa.spawnsManagers[i].GetComponent<spawnmanager>().EventSubscribe(false);
+            }
+        }
         etapa.enEspera = true;
-        etapa.spawnVacio = etapa.spawns.childCount;
         etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
         OnOleada?.Invoke(sender, e);
         //if (e.cantidadEtapas > 0)
@@ -74,9 +86,10 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     public class Etapa : EventArgs
     {
-        public int cantidadEtapas, enemigosPorSpawn, spawnVacio;
+        public int enemigosPorSpawn;
+        internal int cantidadEtapas, spawnVacio;
         internal int currentEnemigosPorSpawn;
-        public Transform spawns;
+        public GameObject[] spawnsManagers;
         internal bool enEspera;
     }
 

@@ -25,8 +25,10 @@ public class Vida : MonoBehaviour
         vida -= danio;
         if (vida <= 0)
         {
+            Transform padre = transform.parent.parent;
             transform.parent = null;
-            GameManager.Instance.ControlSpawnEnemigos(this, GameManager.Instance.etapa);
+            padre.GetComponent<spawnmanager>().GenerarEnemigos(this, GameManager.Instance.etapa);
+            //GameManager.Instance.ControlSpawnEnemigos(this, GameManager.Instance.etapa);
             Destroy(gameObject, 0.5f);//colocar tiempo de cuando muere
 
         }
