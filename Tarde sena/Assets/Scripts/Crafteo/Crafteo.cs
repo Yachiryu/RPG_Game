@@ -49,7 +49,7 @@ public class Crafteo : MonoBehaviour
     {
         if (craft_Zone)
         {
-            if (Input.GetButtonDown("Craft"))
+            if (Input.GetButtonDown("Interaction"))
             {
                 inventoryBool = !inventoryBool;
             }
