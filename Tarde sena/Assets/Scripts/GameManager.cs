@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Configuracion De Oleada")]
     [SerializeField]internal int esperaDuracionOleadasMin;
-    [SerializeField]internal int esperaDuracionOleadasSeg;// duracionOleadasMin, duracionOleadasSeg;// cantidadEtapas;
+    [SerializeField]internal int esperaDuracionOleadasSeg;
     [SerializeField]internal Etapa etapa;
 
  
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-
+        //DontDestroyOnLoad(this);
     }
 
     private void Start()
@@ -71,14 +71,7 @@ public class GameManager : MonoBehaviour
             }
         }
         etapa.enEspera = true;
-        etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
         OnOleada?.Invoke(sender, e);
-        //if (e.cantidadEtapas > 0)
-        //{
-        //    OnOleada?.Invoke(sender, e);
-        //    etapa.spawnVacio = etapa.spawns.childCount;
-        //    etapa.currentEnemigosPorSpawn = etapa.enemigosPorSpawn;
-        //}
     }
 
 
@@ -88,7 +81,6 @@ public class GameManager : MonoBehaviour
     {
         public int enemigosPorSpawn;
         internal int cantidadEtapas, spawnVacio;
-        internal int currentEnemigosPorSpawn;
         public GameObject[] spawnsManagers;
         internal bool enEspera;
     }

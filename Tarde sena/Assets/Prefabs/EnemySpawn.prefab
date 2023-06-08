@@ -45,4 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemisPrefb:
-  - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
+  - {fileID: 8378475634737617591, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
+  - {fileID: 8540842790846915488, guid: c129313a812d89446990766d39039f39, type: 3}
+  - {fileID: 9215581467323015920, guid: 225f764c49f5bd247af0bf3796b5ffb8, type: 3}
+  - {fileID: 7322467486933094447, guid: 469cbb728098de7479d52555e6f970a3, type: 3}
+  - {fileID: 5456240862801792270, guid: 526c51ea0bc2e8c47a9daf00e64232d7, type: 3}
+  - {fileID: 7780966073193562522, guid: ba29c5e09350dc947b5601dd52446cd2, type: 3}
+  - {fileID: 4683453703151406534, guid: 646e2ab39b9e3bb4788844b0dae30890, type: 3}
+  currentEnemigosSpawn: 0
+  boss: 0

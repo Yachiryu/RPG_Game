@@ -6,38 +6,57 @@ public class spawnmanager : MonoBehaviour
 {
     public generador[] spawnpoints;
 
-    bool inicioOleada = true , exitZonaSpawn;
+    bool spawnearTodo = true, inicioOleada, puertaCerrada;
 
     [Tooltip("Activar si este SpawnManager sera parte de las oleadas principales del juego")]
     public bool paraOleadas;
 
-    [Range(1,5)][Tooltip("Rango en minutos en que el enemigo aparecera, solo funciona si este SpawnManager no es parte de las oleadas principales del juego")]
-    public float rangoAparicion; 
+    [Space]
+    [Range(1, 5)]
+    [Tooltip("Rango en minutos en que el enemigo aparecera, solo funciona si este SpawnManager no es parte de las oleadas principales del juego")]
+    public float rangoAparicion;
+    [Range(1, 5)]
+    [Tooltip("Tiempo en minutos en que desapareceran los enemigos si el player sale de la zona de spawn, solo funciona si este SpawnManager no es parte de las oleadas principales del juego")]
+    public float tiempoEsperaDesaparicion;
 
-    int bossIndex;
+
+    int bossIndex = -1;
     void Start()
     {
-        //GameManager.Instance.OnEnemySpawn += GenerarEnemigos;
         spawnpoints = new generador[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
             spawnpoints[i] = transform.GetChild(i).GetComponent<generador>();
             if (spawnpoints[i].boss)
-            {
                 bossIndex = i;
-            }
+
         }
         RellearSpawnPoints();
 
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player" && paraOleadas)
+        {
+            if (inicioOleada && !puertaCerrada)
+            {
+                puertaCerrada = true;
+                print("Cerrar puertas");
+                GenerarEnemigos(this, GameManager.Instance.etapa);
+            }
+        }
 
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && !paraOleadas)
         {
+
             print("Entre zona spawn");
-            inicioOleada = true;
-            exitZonaSpawn = false;
+            puertaCerrada = true;
+            spawnearTodo = true;
+
+            BloquearSpawns(false);
             GenerarEnemigos();
         }
     }
@@ -46,139 +65,75 @@ public class spawnmanager : MonoBehaviour
     {
         if (other.tag == "Player" && !paraOleadas)
         {
-            exitZonaSpawn = true;
+            BloquearSpawns(true);
+            StartCoroutine(CEsperaDesaparecerEnemigos());
         }
     }
     public void GenerarEnemigos(object sender = null, GameManager.Etapa e = null)
     {
-        if (!paraOleadas)
+        if (paraOleadas && !inicioOleada)
         {
-            print("No oleada, rellenar");
-            RellearSpawnPoints();
-            if (exitZonaSpawn )
-            {
-                return;
-            }
+            inicioOleada = true;
+            StartCoroutine(CDañarPlayer());
         }
-        
-
-
-        //foreach (generador item in spawnpoints)
-        //{
-            
-            //if (item.transform.childCount == 0)
-            //{
-                //if (item.currentEnemigosSpawn > 0)
-                //{
-                    if (!inicioOleada)
-                    {
-                        List<int> listaSpawnsLibres = new List<int>();
-                        for (int i = 0; i < spawnpoints.Length; i++)
-                        {
-                            if (spawnpoints[i].transform.childCount == 0 && !spawnpoints[i].boss)
-                            {
-                                if (spawnpoints[i].currentEnemigosSpawn > 0)
-                                {
-                                    listaSpawnsLibres.Add(i);
-                                }
-                                else
-                                {
-                                    if (!spawnpoints[i].spawnBloqueado)
-                                    {
-                                        spawnpoints[i].spawnBloqueado = true;
-                                        e.spawnVacio--;
-                                    }
-                                }
-                            }
-                        }
-                        if (listaSpawnsLibres.Count>0)
-                        {
-                            print($"cantidad items: {listaSpawnsLibres.Count}");
-                            foreach (var item in listaSpawnsLibres)
-                            {
-                                print(item);
-                            }
-                            int randomNumber = Random.Range(0, listaSpawnsLibres.Count);
-                            //if (item.currentEnemigosSpawn > 0)
-                            //{
-                            generador elegido = spawnpoints[listaSpawnsLibres[randomNumber]];
-                            print($"elegido: {elegido.name}");
-                                //if (!elegido.boss)
-                                //{
-                                    if (paraOleadas)
-                                        StartCoroutine(elegido.CSpawnear(0));//StartCoroutine(item.CSpawnear(0));
-                                    else
-                                        StartCoroutine(elegido.CSpawnear(Random.Range(0.5f, rangoAparicion)));//StartCoroutine(item.CSpawnear(Random.Range(0.5f, rangoAparicion)));
-                                        //item.Spawnear();
-                                    //break;
-                                //}
-                            //}
-                            //else
-                            //{
-                            //    e.spawnVacio--;
-                            //    //break;
-                            //}
-                        }
-                    }
-                    else
-                    {
-                        foreach (generador item in spawnpoints)
-                        {
-                            if (!item.boss)
-                            {
-                                if (paraOleadas)
-                                    StartCoroutine(item.CSpawnear(0));
-                                else
-                                    StartCoroutine(item.CSpawnear(Random.Range(0.5f, rangoAparicion)));
-                                //item.Spawnear();
-                            }
-                        }
-                    }
-                //}
-                //else
-                //{
-                //    e.spawnVacio--;
-                //    break;
-                //}
-            //}
-        //}
-        inicioOleada = false;
-        if (paraOleadas)
+        if (puertaCerrada)
         {
-            if (e.spawnVacio == 1)
+            if (spawnearTodo)
             {
-                if (e.cantidadEtapas == 1)
+                for (var i = 0; i < spawnpoints.Length; i++)
                 {
-                    spawnpoints[bossIndex].Spawnear();
-
-                }
-                else
-                {
-                    e.spawnVacio--;
+                    if (!spawnpoints[i].boss)
+                        GenerarSpawn(i);
                 }
             }
-            if (e.spawnVacio <= 0)
+            spawnearTodo = false;
+            if (paraOleadas)
             {
-                inicioOleada = true;
-                RellearSpawnPoints();
-                GameManager.Instance.etapa.cantidadEtapas--;
-                GameManager.Instance.Oleada(this, GameManager.Instance.etapa);
+                if (e.spawnVacio == 1 && bossIndex >= 0)
+                {
+                    if (e.cantidadEtapas == 1)
+                        GenerarSpawn(bossIndex);//Invoca El Boss
+                    else
+                        e.spawnVacio--;
+                }
+                if (e.spawnVacio <= 0)
+                {
+                    spawnearTodo = true;
+                    RellearSpawnPoints();
+                    GameManager.Instance.etapa.cantidadEtapas--;//Disminuye la cantidad de etapas
+                    GameManager.Instance.Oleada(this, GameManager.Instance.etapa);//Invoca la siguiente etapa
+                }
             }
         }
     }
 
-    void RellearSpawnPoints()
+    public void RellearSpawnPoints()
     {
         foreach (generador item in spawnpoints)
         {
             if (item.boss)
-            {
                 item.currentEnemigosSpawn = 1;
-            }
             else
-            {
                 item.currentEnemigosSpawn = GameManager.Instance.etapa.enemigosPorSpawn;
-            }
+        }
+    }
+
+    public void GenerarSpawn(int index)
+    {
+        //if (!spawnpoints[index].corrutinaCSpawnear)
+        //{
+            if (paraOleadas)
+                StartCoroutine(spawnpoints[index].CSpawnear(0));
+            else
+                StartCoroutine(spawnpoints[index].CSpawnear(Random.Range(0.5f, rangoAparicion)));
+        //}
+    }
+
+    void BloquearSpawns(bool bloquear)
+    {
+        foreach (var item in spawnpoints)
+        {
+            item.spawnBloqueado = bloquear;
         }
     }
 
@@ -190,6 +145,29 @@ public class spawnmanager : MonoBehaviour
             GameManager.Instance.OnEnemySpawn -= GenerarEnemigos;
     }
 
+    //Corrutina para hacer daño al jugador si no esta en el lugar una vez acabado el tiempo de espera para empezar la oleada
+    IEnumerator CDañarPlayer()
+    {
+        yield return new WaitForSeconds(1);
+        Vida jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Vida>();
+        while (inicioOleada && !puertaCerrada)
+        {
+            yield return new WaitForSeconds(1);
+            jugador.Danio(2);
+        }
+    }
+
+    //Solo para SpawnManager que no sean para Oleadas
+    IEnumerator CEsperaDesaparecerEnemigos()
+    {
+        tiempoEsperaDesaparicion *= 60; //convertir en segundos
+        yield return new WaitForSeconds(tiempoEsperaDesaparicion);
+        foreach (var item in spawnpoints)
+        {
+            if (item.transform.childCount != 0)
+                item.transform.GetChild(0).gameObject.SetActive(false);
+        }
+    }
     private void OnDestroy()
     {
         GameManager.Instance.OnEnemySpawn -= GenerarEnemigos;
