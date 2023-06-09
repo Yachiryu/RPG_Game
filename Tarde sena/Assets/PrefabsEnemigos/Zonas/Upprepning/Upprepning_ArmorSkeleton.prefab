@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 7780966073193748651}
   m_Layer: 4
   m_Name: Upprepning_ArmorSkeleton
-  m_TagString: Upprepning_Skeleton
+  m_TagString: enemis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2801,7 +2801,7 @@ GameObject:
   - component: {fileID: 4683453703151406535}
   m_Layer: 4
   m_Name: Upprepning_Skeleton
-  m_TagString: Upprepning_Skeleton
+  m_TagString: enemis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

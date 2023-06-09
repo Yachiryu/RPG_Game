@@ -2502,7 +2502,7 @@ GameObject:
   - component: {fileID: 5864276769944703081}
   m_Layer: 4
   m_Name: "L\xEDder Skelett"
-  m_TagString: Player
+  m_TagString: enemis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

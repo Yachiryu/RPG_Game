@@ -36,6 +36,12 @@ public class Cofre : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.P))
+        {
+            GetComponentInChildren<Rotar>();
+        
+        }
+
         if (other.tag == "Player" && Input.GetButtonDown("Interaction") && cofreAbierto)
         {
             cofreAbierto = false;

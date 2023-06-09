@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 7065647124000313221}
   m_Layer: 4
   m_Name: 'Rey Raksasa '
-  m_TagString: Respawn
+  m_TagString: enemis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
