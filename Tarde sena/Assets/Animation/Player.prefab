@@ -4316,7 +4316,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6133403167946718822
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4333,7 +4333,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6133403168243173440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5228,6 +5228,7 @@ GameObject:
   - component: {fileID: 2073517091979957203}
   - component: {fileID: 4417324454591325151}
   - component: {fileID: 7491622756942931446}
+  - component: {fileID: 9101453786966056019}
   m_Layer: 0
   m_Name: Character-Pricipal
   m_TagString: Player
@@ -5298,6 +5299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad159c285c6e6ae4caa1641e7eff37c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ataque: {fileID: 0}
   animator: {fileID: 0}
   animationSpeed: 1
   ikHands: {fileID: 0}
@@ -5449,6 +5451,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 2
+--- !u!114 &9101453786966056019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133403168264851733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0819bd6a970519408b8b0a4a1b55fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 0}
+  radioGolpe: 2
 --- !u!1 &6133403168267449388
 GameObject:
   m_ObjectHideFlags: 0

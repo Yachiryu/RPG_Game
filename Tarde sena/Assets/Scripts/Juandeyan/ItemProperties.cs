@@ -15,7 +15,7 @@ public class ItemProperties : ScriptableObject
     public Sprite icon;
     public Tipo type;
 
-    public float daño;
+    public int daño;
     public float ColDown;
     public int desgasteArma; 
     
