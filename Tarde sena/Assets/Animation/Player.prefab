@@ -4316,7 +4316,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6133403167946718822
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4333,7 +4333,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &6133403168243173440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5229,6 +5229,7 @@ GameObject:
   - component: {fileID: 4417324454591325151}
   - component: {fileID: 7491622756942931446}
   - component: {fileID: 9101453786966056019}
+  - component: {fileID: 5038760496343145610}
   m_Layer: 0
   m_Name: Character-Pricipal
   m_TagString: Player
@@ -5465,6 +5466,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centroGolpe: {fileID: 0}
   radioGolpe: 2
+--- !u!114 &5038760496343145610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133403168264851733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barravida: {fileID: 0}
 --- !u!1 &6133403168267449388
 GameObject:
   m_ObjectHideFlags: 0

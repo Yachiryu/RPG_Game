@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3491189685172704021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8701011682990392767}
+  m_Layer: 0
+  m_Name: CentroGolpe
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8701011682990392767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491189685172704021}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.97852516, z: 0.894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8378475634737617594}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8378475633140137771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,6 +2171,8 @@ GameObject:
   - component: {fileID: 8378475634737617586}
   - component: {fileID: 8378475634737617585}
   - component: {fileID: 8378475634737617584}
+  - component: {fileID: 7984057375560150004}
+  - component: {fileID: 310415662249857285}
   m_Layer: 4
   m_Name: Salvaxe_Female
   m_TagString: enemis
@@ -2161,6 +2194,7 @@ Transform:
   m_Children:
   - {fileID: 8378475634089638423}
   - {fileID: 8378475634968527691}
+  - {fileID: 8701011682990392767}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2401,7 +2435,7 @@ MonoBehaviour:
   DeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7239854685079534827, guid: d81311162f2403a40b36b92a9525864f, type: 3}
+      - m_Target: {fileID: 310415662249857285}
         m_TargetAssemblyTypeName: Vida, Assembly-CSharp
         m_MethodName: EventoMuerteIA
         m_Mode: 2
@@ -2418,7 +2452,19 @@ MonoBehaviour:
       m_Calls: []
   OnDoDamageEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7984057375560150004}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ReachedDestinationEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2454,7 +2500,19 @@ MonoBehaviour:
       m_Calls: []
   OnCriticalHitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7984057375560150004}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IdleSoundsSeconds: 0
   IdleSoundsSecondsMin: 5
   IdleSoundsSecondsMax: 10
@@ -2638,7 +2696,7 @@ MonoBehaviour:
   DamageAmountRun: 5
   WanderRadius: 25
   TabNumber: 1
-  TemperamentTabNumber: 1
+  TemperamentTabNumber: 5
   DetectionTagsTabNumber: 2
   AnimationTabNumber: 1
   SoundTabNumber: 0
@@ -3216,6 +3274,35 @@ MonoBehaviour:
   DeathDelay: 0
   BoneObjects: 
   BoneTransformList: []
+--- !u!114 &7984057375560150004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378475634737617591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5159977f33152408d29cbd8c424326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 8701011682990392767}
+  radioGolpe: 0.8
+  iA: {fileID: 8378475634737617593}
+--- !u!114 &310415662249857285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378475634737617591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barravida: {fileID: 0}
 --- !u!1 &8378475634742357436
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,9 @@ public class Ataque : MonoBehaviour
     private float tiempoEspera;
     
     internal bool onAttack;
-     public float radioGolpe;
+    public float radioGolpe;
+
+    private GameObject armaActual;
     
    
     void Start()
@@ -36,7 +38,8 @@ public class Ataque : MonoBehaviour
     public void Attack()
     {
         onAttack = true;
-        ItemProperties proItem = transform.GetComponent<RPGCharacterWeaponController>().twoHandSword.GetComponent<Item>().itemProperties;
+        armaActual = transform.GetComponent<RPGCharacterWeaponController>().twoHandSword;
+        ItemProperties proItem = armaActual.GetComponent<Item>().itemProperties;
         esperaArma = proItem.ColDown;
 
         Collider[] objetos = Physics.OverlapSphere(centroGolpe.position, radioGolpe);
@@ -52,6 +55,9 @@ public class Ataque : MonoBehaviour
                 }
             }
         }
+        Slot slot = armaActual.GetComponent<Item>().slot;
+        slot.UpdateUsoArma(proItem.velDesgateArma);
+
     }
 
     private void OnDrawGizmos()

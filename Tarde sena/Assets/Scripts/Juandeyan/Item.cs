@@ -24,6 +24,8 @@ public class Item : MonoBehaviour
 
     public bool playersWeapon;
 
+    public Slot slot;
+
     //public Tipo type;
 
     public ItemProperties itemProperties;

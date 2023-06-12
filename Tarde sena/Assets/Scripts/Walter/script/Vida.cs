@@ -19,14 +19,14 @@ public class Vida : MonoBehaviour
         {
             yield return new WaitForSeconds(5);
 
-            Danio(100);
+            ManejoVida(100);
         }
     
     }
 
-    public void Danio(int danio)
+    public void ManejoVida(int cantidad)
     {
-        vida -= danio;
+        vida -= cantidad;
         if (vida <= 0)
         {
             //muere

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPGCharacterAnims;
 
 
 public class Inventory : MonoBehaviour
@@ -10,7 +11,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject inventory;
 
-    public GameObject weaponManager;
+    public RPGCharacterWeaponController weaponManager;
+    public Vida vida;
     private int allSlots;
 
     private int[] allSlot;
@@ -144,6 +146,7 @@ public class Inventory : MonoBehaviour
                     {
                         slotAdd.slotProperties = slotAdd.slotVacio;
 
+                        slotAdd.numberOfObjects--;
                         slotAdd.UpdateSlot();
                         slotAdd.UpdateNumberObj();
                         break;
@@ -158,10 +161,16 @@ public class Inventory : MonoBehaviour
         switch (item.type)
         {
             case ItemProperties.Tipo.weapon:
+                weaponManager.twoHandSword = item.objetoAsociado;
                 break;
             case ItemProperties.Tipo.resources:
                 break;
             case ItemProperties.Tipo.item:
+                if (item.nombre == "")
+                {
+                    vida.ManejoVida(item.regeneracionVida);
+                    RemoveItem(item, 1);
+                }
                 break;
         }
     }

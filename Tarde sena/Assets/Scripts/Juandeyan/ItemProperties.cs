@@ -17,7 +17,9 @@ public class ItemProperties : ScriptableObject
 
     public int daño;
     public float ColDown;
-    public int desgasteArma; 
+    public int desgasteArma;
+
+    public int velDesgateArma;
     
     public Materials[] materialsToCraft;
 
