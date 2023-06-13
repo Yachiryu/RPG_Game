@@ -66,13 +66,13 @@ namespace RPGCharacterAnims
 			#if ENABLE_INPUT_SYSTEM
 			inputFollow = Keyboard.current.fKey.isPressed;
 			inputRotateL = Keyboard.current.qKey.isPressed;
-			inputRotateR = Keyboard.current.eKey.isPressed;
+			inputRotateR = Keyboard.current.rKey.isPressed;
 			inputMouseScrollUp = Mouse.current.scroll.ReadValue().y > 0f;
 			inputMouseScrollDown = Mouse.current.scroll.ReadValue().y < 0f;
 			#else
 			inputFollow = Input.GetKeyDown(KeyCode.F);
 			inputRotateL = Input.GetKey(KeyCode.Q);
-			inputRotateR = Input.GetKey(KeyCode.E);
+			inputRotateR = Input.GetKey(KeyCode.R);
 			inputMouseScrollUp = Input.mouseScrollDelta.y == 1;
 			inputMouseScrollDown = Input.mouseScrollDelta.y == -1;
 			#endif

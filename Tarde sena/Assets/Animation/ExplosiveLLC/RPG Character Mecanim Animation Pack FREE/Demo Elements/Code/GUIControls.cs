@@ -211,6 +211,16 @@ namespace RPGCharacterAnims
 					switchWeaponContext.leftWeapon = Weapon.Unarmed;
 					switchWeaponContext.rightWeapon = Weapon.Unarmed;
 				}
+
+                if (Input.GetButton("SwitchUpDown"))
+                {
+					doSwitch = true;
+					switchWeaponContext.type = "Switch";
+					switchWeaponContext.side = "Both";
+					switchWeaponContext.leftWeapon = Weapon.Unarmed;
+					switchWeaponContext.rightWeapon = Weapon.Unarmed;
+				}
+          
 			}
 			var offset = 310;
 

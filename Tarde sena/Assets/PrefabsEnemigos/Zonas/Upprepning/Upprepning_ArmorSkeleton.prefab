@@ -938,6 +938,8 @@ GameObject:
   - component: {fileID: 7780966073193748649}
   - component: {fileID: 7780966073193748648}
   - component: {fileID: 7780966073193748651}
+  - component: {fileID: 6293362313266271575}
+  - component: {fileID: 5641990702703725040}
   m_Layer: 4
   m_Name: Upprepning_ArmorSkeleton
   m_TagString: enemis
@@ -959,6 +961,7 @@ Transform:
   m_Children:
   - {fileID: 7780966073193760498}
   - {fileID: 7780966073193825798}
+  - {fileID: 7909694513195780252}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1216,7 +1219,19 @@ MonoBehaviour:
       m_Calls: []
   OnDoDamageEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5641990702703725040}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ReachedDestinationEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1252,7 +1267,19 @@ MonoBehaviour:
       m_Calls: []
   OnCriticalHitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5641990702703725040}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IdleSoundsSeconds: 0
   IdleSoundsSecondsMin: 5
   IdleSoundsSecondsMax: 10
@@ -2012,6 +2039,35 @@ MonoBehaviour:
   DeathDelay: 0
   BoneObjects: 
   BoneTransformList: []
+--- !u!114 &6293362313266271575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780966073193562522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barravida: {fileID: 0}
+--- !u!114 &5641990702703725040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780966073193562522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5159977f33152408d29cbd8c424326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 7909694513195780252}
+  radioGolpe: 0.64
+  iA: {fileID: 7780966073193748643}
 --- !u!1 &7780966073193564784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3900,4 +3956,35 @@ Transform:
   - {fileID: 7780966073193727280}
   m_Father: {fileID: 7780966073193821920}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8664698449310396890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7909694513195780252}
+  m_Layer: 0
+  m_Name: centro golpe
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7909694513195780252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8664698449310396890}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.073, y: 1.074, z: 0.906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7780966073193748650}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
