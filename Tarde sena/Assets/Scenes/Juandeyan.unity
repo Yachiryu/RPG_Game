@@ -176,7 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -1504,7 +1507,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -1773,7 +1779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -2637,7 +2646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.40637207, y: -5.2676086}
+  m_AnchoredPosition: {x: -0.40637207, y: -5.267578}
   m_SizeDelta: {x: -292.9907, y: -180.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251171553
@@ -2872,6 +2881,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: 238ede03a4c42834f8eb6cbab9f8f089, type: 2}
   objeto: {fileID: 277155639}
 --- !u!65 &277155641
@@ -3415,7 +3425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -3779,7 +3792,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -3837,7 +3853,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.40637207, y: -5.2676086}
+  m_AnchoredPosition: {x: -0.40637207, y: -5.267578}
   m_SizeDelta: {x: -292.9907, y: -180.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416351156
@@ -4852,6 +4868,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 0}
   objeto: {fileID: 0}
 --- !u!135 &475197300
@@ -5375,7 +5392,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -5473,7 +5493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -6107,7 +6130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -7263,6 +7289,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: 238ede03a4c42834f8eb6cbab9f8f089, type: 2}
   objeto: {fileID: 700309633}
 --- !u!65 &700309635
@@ -7434,7 +7461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -7835,7 +7865,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -7933,7 +7966,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -8069,7 +8105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -8300,7 +8339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -8360,7 +8402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -8591,7 +8636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -8860,7 +8908,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -9361,7 +9412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -9421,7 +9475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -9519,7 +9576,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -9952,7 +10012,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -10229,7 +10292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -10597,7 +10663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -10963,7 +11032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -11313,6 +11385,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: 2fbf33936877fff4f81a2991c1588de1, type: 2}
   objeto: {fileID: 1192199050}
 --- !u!135 &1192199052
@@ -11714,7 +11787,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -11931,6 +12007,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: 2fbf33936877fff4f81a2991c1588de1, type: 2}
   objeto: {fileID: 1276079574}
 --- !u!135 &1276079576
@@ -12183,6 +12260,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: 2fbf33936877fff4f81a2991c1588de1, type: 2}
   objeto: {fileID: 1278514852}
 --- !u!135 &1278514854
@@ -12449,7 +12527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -13158,7 +13239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -13297,6 +13381,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: 238ede03a4c42834f8eb6cbab9f8f089, type: 2}
   objeto: {fileID: 1378593022}
 --- !u!65 &1378593024
@@ -13565,7 +13650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -13663,7 +13751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -13897,7 +13988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -13937,8 +14031,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc815d587adacad4787ced6bb122af9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryEnabled: 0
+  crafteo_Scrip: {fileID: 0}
   inventory: {fileID: 1835834756}
   weaponManager: {fileID: 91467434}
+  vida: {fileID: 0}
   slotHolders:
   - {fileID: 1613611454}
   - {fileID: 1835834754}
@@ -14091,7 +14188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.40637207, y: -5.2676086}
+  m_AnchoredPosition: {x: -0.40637207, y: -5.267578}
   m_SizeDelta: {x: -292.9907, y: -180.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481931400
@@ -14209,7 +14306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -14824,9 +14924,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsOfRandomChest: []
-  objetosFijos: []
   maxObjects: 0
   boss: 0
+  objetosFijos: []
+  meshBossCofre:
+    meshCofre: {fileID: 0}
+    meshTapaCofre: {fileID: 0}
 --- !u!65 &1603586200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15114,7 +15217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -15212,7 +15318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -15310,7 +15419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -16117,7 +16229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -16350,7 +16465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -17781,6 +17899,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5120647724255939628, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.2999878
+      objectReference: {fileID: 0}
     - target: {fileID: 5200711453153714841, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18054,6 +18176,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5497270630107948719, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554014979136715365, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -18877,6 +19003,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641226545310884253, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8641226545311894783, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18921,13 +19051,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641226545527576839, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8641226545598709019, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 8641226545655984567, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8641226545660776349, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -18943,7 +19077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641226545773753879, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8641226545823783142, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_IsActive
@@ -19005,6 +19139,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641226546302243567, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8641226546332259465, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -19035,7 +19173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641226546438526304, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8641226546477297662, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -19097,9 +19235,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641226546828471783, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8641226546838598191, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8641226546839182930, guid: 5b3a00e703d4db247b0e7feb349980d6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -19356,7 +19498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -19454,7 +19599,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -19552,7 +19700,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -19900,6 +20051,7 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 0}
   objeto: {fileID: 0}
 --- !u!65 &1914944098
@@ -20569,7 +20721,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -20971,7 +21126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -21031,7 +21189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -21167,7 +21328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -21227,7 +21391,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -21363,7 +21530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -21693,7 +21863,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48192eea57cc78c45872264f0f0cc20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: {fileID: 0}
   item: {fileID: 0}
+  panelCraft: {fileID: 0}
+  muricionArma: 0
   empty: 0
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 0
@@ -21871,3 +22044,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138270420}
   m_CullTransparentMesh: 1
+--- !u!1001 &6682433632785100991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.657864
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.2306805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.410608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571701, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682433632395571702, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
+      propertyPath: m_Name
+      value: Reja
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88372550d0772ae4aa4ea589ed17e663, type: 3}
