@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPGCharacterAnims;
 
 
 public class Inventory : MonoBehaviour
 {
-    private bool inventoryEnabled;
+    public bool inventoryEnabled;
+    public Crafteo crafteo_Scrip;
 
     public GameObject inventory;
 
-    public GameObject weaponManager;
+    public RPGCharacterWeaponController weaponManager;
+    public Vida vida;
     private int allSlots;
 
     private int[] allSlot;
     private int enabledSlots;
 
-    private ItemProperties.Tipo[] tipoSlot;
+    internal ItemProperties.Tipo[] tipoSlot;
     public Dictionary<ItemProperties.Tipo, GameObject[]> slots;
     
     public GameObject[] slotHolders;
@@ -46,6 +49,10 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+        foreach (var item in slotHolders)
+        {
+            item.transform.parent.gameObject.SetActive(false);
+        }
     }
 
 
@@ -58,10 +65,12 @@ public class Inventory : MonoBehaviour
 
         if (inventoryEnabled)
         {
+            crafteo_Scrip.inventoryBool = true;
             inventory.SetActive(true);
         }
         else
         {
+            crafteo_Scrip.inventoryBool = false;
             inventory.SetActive(false);
         }
     }
@@ -110,7 +119,6 @@ public class Inventory : MonoBehaviour
 
                 slotAdd.UpdateSlot();
                 slotAdd.UpdateNumberObj();
-
                 slotAdd.empty = false;
                 break;
             }
@@ -118,26 +126,31 @@ public class Inventory : MonoBehaviour
     }
 
    
-    public void RemoveItem(ItemProperties item)
+    public void RemoveItem(ItemProperties item, int cantidad = 0)
     {
-        for (int i = 0; i < slots[item.type].Length; i++)
+        for (int j = 0; j < cantidad; j++)
         {
-            Slot slotAdd = slots[item.type][i].GetComponent<Slot>();
-
-            if (slotAdd.slotProperties.nombre == item.nombre)
+            for (int i = 0; i < slots[item.type].Length; i++)
             {
-                if (slotAdd.numberOfObjects > 1)
+                Slot slotAdd = slots[item.type][i].GetComponent<Slot>();
+
+                if (slotAdd.slotProperties.nombre == item.nombre)
                 {
-                    slotAdd.numberOfObjects--;
-                    slotAdd.UpdateNumberObj();
-                    break;
-                }
-                else
-                {
-                    slotAdd.slotProperties = slotAdd.slotVacio;
-                    slotAdd.UpdateSlot();
-                    slotAdd.UpdateNumberObj();
-                    break;
+                    if (slotAdd.numberOfObjects > 1)
+                    {
+                        slotAdd.numberOfObjects--;
+                        slotAdd.UpdateNumberObj();
+                        break;
+                    }
+                    else
+                    {
+                        slotAdd.slotProperties = slotAdd.slotVacio;
+
+                        slotAdd.numberOfObjects--;
+                        slotAdd.UpdateSlot();
+                        slotAdd.UpdateNumberObj();
+                        break;
+                    }
                 }
             }
         }
@@ -148,10 +161,16 @@ public class Inventory : MonoBehaviour
         switch (item.type)
         {
             case ItemProperties.Tipo.weapon:
+                weaponManager.twoHandSword = item.objetoAsociado;
                 break;
             case ItemProperties.Tipo.resources:
                 break;
             case ItemProperties.Tipo.item:
+                if (item.nombre == "")
+                {
+                    vida.ManejoVida(item.regeneracionVida);
+                    RemoveItem(item, 1);
+                }
                 break;
         }
     }

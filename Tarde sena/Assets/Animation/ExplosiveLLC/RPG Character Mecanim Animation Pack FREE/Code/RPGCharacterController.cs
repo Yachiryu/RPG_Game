@@ -14,6 +14,9 @@ namespace RPGCharacterAnims
     /// </summary>
     public class RPGCharacterController : MonoBehaviour
     {
+        //Variable creada por equipo de progrmacion(fuera del rpg)
+        public Ataque ataque;
+
 	    /// <summary>
         /// Event called when actions are locked by an animation.
         /// </summary>
@@ -467,13 +470,19 @@ namespace RPGCharacterAnims
         /// <param name="duration">Duration in seconds that animation is locked.</param>
         public void Attack(int attackNumber, Side attackSide, Weapon leftWeapon, Weapon rightWeapon, float duration)
         {
-	        animator.SetSide(attackSide);
-			_isAttacking = true;
-            Lock(true, true, true, 0, duration);
+            if(ataque.onAttack == false)
+            {
+	            animator.SetSide(attackSide);
+			    _isAttacking = true;
+                Lock(true, true, true, 0, duration);
 
-			// Trigger the animation.
-			var attackTriggerType = AnimatorTrigger.AttackTrigger;
-			animator.SetActionTrigger(attackTriggerType, attackNumber);
+			    // Trigger the animation.
+			    var attackTriggerType = AnimatorTrigger.AttackTrigger;
+			    animator.SetActionTrigger(attackTriggerType, attackNumber);
+
+                ataque.Attack();
+            }
+
 		}
 
         /// <summary>
@@ -487,11 +496,15 @@ namespace RPGCharacterAnims
         /// <param name="twoHandedWeapon">If wielding a two-handed weapon.</param>
         public void RunningAttack(Side side, bool leftWeapon, bool rightWeapon, bool twoHandedWeapon)
         {
-			if (side == Side.Right && rightWeapon) { animator.SetActionTrigger(AnimatorTrigger.AttackTrigger, 4); }
-			else if (hasNoWeapon) {
-				animator.SetSide(side);
-				animator.SetActionTrigger(AnimatorTrigger.AttackTrigger, 1);
-			}
+            if (ataque.onAttack == false)
+            {
+
+               if (side == Side.Right && rightWeapon) { animator.SetActionTrigger(AnimatorTrigger.AttackTrigger, 4); }
+			    else if (hasNoWeapon) {
+				    animator.SetSide(side);
+				    animator.SetActionTrigger(AnimatorTrigger.AttackTrigger, 1);
+			    }
+            }
         }
 
         /// <summary>
