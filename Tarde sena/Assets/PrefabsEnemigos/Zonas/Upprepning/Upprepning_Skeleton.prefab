@@ -196,6 +196,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43372452983199044, guid: d424edd5ca5f21b4e8e923da92191248, type: 2}
+--- !u!1 &4077285453115448181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8776567973861041891}
+  m_Layer: 0
+  m_Name: golpe centro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8776567973861041891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077285453115448181}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000067949295, y: 0.8926042, z: 1.037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4683453703151599674}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4683453703151157602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,6 +2830,8 @@ GameObject:
   - component: {fileID: 4683453703151406533}
   - component: {fileID: 4683453703151406532}
   - component: {fileID: 4683453703151406535}
+  - component: {fileID: 7378786834522159996}
+  - component: {fileID: 7097295908472849347}
   m_Layer: 4
   m_Name: Upprepning_Skeleton
   m_TagString: enemis
@@ -2820,6 +2853,7 @@ Transform:
   m_Children:
   - {fileID: 4683453703151610774}
   - {fileID: 4683453703151579118}
+  - {fileID: 8776567973861041891}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3077,7 +3111,19 @@ MonoBehaviour:
       m_Calls: []
   OnDoDamageEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7097295908472849347}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ReachedDestinationEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3113,7 +3159,19 @@ MonoBehaviour:
       m_Calls: []
   OnCriticalHitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7097295908472849347}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IdleSoundsSeconds: 0
   IdleSoundsSecondsMin: 5
   IdleSoundsSecondsMax: 10
@@ -3879,6 +3937,35 @@ MonoBehaviour:
   DeathDelay: 0
   BoneObjects: 
   BoneTransformList: []
+--- !u!114 &7378786834522159996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683453703151406534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barravida: {fileID: 0}
+--- !u!114 &7097295908472849347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683453703151406534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5159977f33152408d29cbd8c424326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 8776567973861041891}
+  radioGolpe: 0.81
+  iA: {fileID: 4683453703151406591}
 --- !u!1 &4683453703151410932
 GameObject:
   m_ObjectHideFlags: 0

@@ -2467,6 +2467,8 @@ GameObject:
   - component: {fileID: 8540842790839523821}
   - component: {fileID: 8540842790839523602}
   - component: {fileID: 8540842790839523603}
+  - component: {fileID: 4197123353544620986}
+  - component: {fileID: 2835510998549707012}
   m_Layer: 4
   m_Name: Salvaxe_Male
   m_TagString: enemis
@@ -2488,6 +2490,7 @@ Transform:
   m_Children:
   - {fileID: 8540842790846990394}
   - {fileID: 8540842790847001400}
+  - {fileID: 4988813655499562233}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2728,7 +2731,7 @@ MonoBehaviour:
   DeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7239854685079534827, guid: d81311162f2403a40b36b92a9525864f, type: 3}
+      - m_Target: {fileID: 4197123353544620986}
         m_TargetAssemblyTypeName: Vida, Assembly-CSharp
         m_MethodName: EventoMuerteIA
         m_Mode: 2
@@ -2745,7 +2748,19 @@ MonoBehaviour:
       m_Calls: []
   OnDoDamageEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2835510998549707012}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ReachedDestinationEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2781,7 +2796,19 @@ MonoBehaviour:
       m_Calls: []
   OnCriticalHitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2835510998549707012}
+        m_TargetAssemblyTypeName: AtaqueEnemigo, Assembly-CSharp
+        m_MethodName: AtacarEnemigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IdleSoundsSeconds: 0
   IdleSoundsSecondsMin: 5
   IdleSoundsSecondsMax: 10
@@ -3541,6 +3568,35 @@ MonoBehaviour:
   DeathDelay: 0
   BoneObjects: 
   BoneTransformList: []
+--- !u!114 &4197123353544620986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8540842790846915488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barravida: {fileID: 0}
+--- !u!114 &2835510998549707012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8540842790846915488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5159977f33152408d29cbd8c424326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 4988813655499562233}
+  radioGolpe: 0.81
+  iA: {fileID: 8540842790839523819}
 --- !u!1 &8540842790846915750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,3 +4056,34 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43950867050317164, guid: be017f4fa7e129247a0f4f8384c0f90f, type: 2}
+--- !u!1 &9219399454919451478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4988813655499562233}
+  m_Layer: 0
+  m_Name: centro de golpe
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4988813655499562233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219399454919451478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.104, z: 0.968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8540842790847084310}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

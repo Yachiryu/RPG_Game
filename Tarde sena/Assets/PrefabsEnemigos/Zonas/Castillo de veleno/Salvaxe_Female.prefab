@@ -3287,7 +3287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centroGolpe: {fileID: 8701011682990392767}
-  radioGolpe: 0.8
+  radioGolpe: 0.74
   iA: {fileID: 8378475634737617593}
 --- !u!114 &310415662249857285
 MonoBehaviour:
