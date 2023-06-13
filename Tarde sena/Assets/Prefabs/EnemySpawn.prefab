@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemisPrefb:
-  - {fileID: 786607530566516619, guid: 63082be32def7db45968aef6320cc4bf, type: 3}
+  - {fileID: 8378475634737617591, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
+  currentEnemigosSpawn: 0
+  boss: 0

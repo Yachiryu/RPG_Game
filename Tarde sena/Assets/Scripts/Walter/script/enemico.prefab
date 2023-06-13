@@ -1812,6 +1812,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   barravida: {fileID: 0}
+  cofre: {fileID: 133660, guid: 966c30fa29f68f3468a90390a38bd9e4, type: 3}
+  jefe: 0
 --- !u!1 &786612365168326403
 GameObject:
   m_ObjectHideFlags: 0

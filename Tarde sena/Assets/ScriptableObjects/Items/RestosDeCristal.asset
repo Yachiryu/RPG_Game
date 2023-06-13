@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92b7b318debd7c48b8d409f8e7997a1, type: 3}
   m_Name: RestosDeCristal
   m_EditorClassIdentifier: 
-  iD: 0
+  iD: 13
   nombre: Restos De Cristal
   description: Un cristal se cayo y se rompio
   porcentajeDeSalida: 50
