@@ -10,6 +10,7 @@ public class Cofre : MonoBehaviour
     List<int> objetos = new List<int>();
     public ItemProperties[] objetosFijos;
 
+    public ParticleSystem openEfect;
     public MeshCofre meshBossCofre;
     bool cofreAbierto;
 
@@ -32,6 +33,7 @@ public class Cofre : MonoBehaviour
         if (e.enEspera == true)
         {
             cofreAbierto = true;
+            GetComponentInChildren<Rotar>().EmpezarRotacion(0);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -41,7 +43,16 @@ public class Cofre : MonoBehaviour
             GetComponentInChildren<Rotar>();
         
         }
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.N))
+        {
+            GetComponentInChildren<Rotar>().EmpezarRotacion(-90);
+            openEfect.Play();
 
+        }
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.M))
+        {
+            GetComponentInChildren<Rotar>().EmpezarRotacion(180,true);
+        }
         if (other.tag == "Player" && Input.GetButtonDown("Interaction") && cofreAbierto)
         {
             cofreAbierto = false;
