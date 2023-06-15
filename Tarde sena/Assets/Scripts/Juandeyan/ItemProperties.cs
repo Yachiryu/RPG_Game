@@ -14,6 +14,13 @@ public class ItemProperties : ScriptableObject
     public GameObject objetoAsociado;
     public Sprite icon;
     public Tipo type;
+
+    public int daño;
+    public float ColDown;
+    public int desgasteArma;
+
+    public int velDesgateArma;
+    
     public Materials[] materialsToCraft;
 
     [System.Serializable]

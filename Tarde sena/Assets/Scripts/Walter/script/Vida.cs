@@ -15,28 +15,35 @@ public class Vida : MonoBehaviour
 
     IEnumerator Mientras()
     {
-        yield return new WaitForSeconds(5);
-        Danio(100);
+        if (transform.tag != "Player")
+        {
+            yield return new WaitForSeconds(5);
+
+            ManejoVida(100);
+        }
     
     }
 
-    public void Danio(int danio)
+    public void ManejoVida(int cantidad)
     {
-        vida -= danio;
+        vida -= cantidad;
         if (vida <= 0)
         {
-            transform.parent = null;
-            GameManager.Instance.ControlSpawnEnemigos(this, GameManager.Instance.etapa);
-            Destroy(gameObject, 0.5f);//colocar tiempo de cuando muere
-
+            //muere
         }
     }
 
-    //public void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == ("Peligro"))
-    //    {
-    //        vida--;
-    //    }
-    //}
+   public void EventoMuerteIA(GameObject obj)
+    {
+        Transform padre = obj.transform.parent;
+        obj.transform.parent = null;
+        for (var i = 0; i < padre.parent.childCount; i++)
+        {
+            if (padre.parent.GetChild(i) == padre)
+            {
+                padre.parent.GetComponent<spawnmanager>().GenerarSpawn(i);
+            }
+        }
+        Destroy(obj, 6f);//colocar tiempo de cuando muere
+    }
 }
