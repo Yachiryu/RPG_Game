@@ -6,7 +6,11 @@ using TMPro;
 
 public class Slot : MonoBehaviour
 {
+    public Inventory inventario;
     public GameObject item;
+    public GameObject panelCraft;
+    public int muricionArma;
+
     //public int iD;
     //public string type;
     //public string nombre;
@@ -25,8 +29,10 @@ public class Slot : MonoBehaviour
 
     public ItemProperties slotProperties;
     public ItemProperties slotVacio;
+
     private void Start()
     {
+        inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         slotIconGameObject = transform.GetChild(0);
         slotProperties = slotVacio;
         UpdateSlot();
@@ -36,6 +42,16 @@ public class Slot : MonoBehaviour
     {
         //slotIconGameObject.GetComponent<Image>().sprite = icon;
         slotIconGameObject.GetComponent<Image>().sprite = slotProperties.icon;
+        muricionArma = slotProperties.desgasteArma;
+    }
+
+    public void UpdateUsoArma(int cantidad)
+    {
+        muricionArma -= cantidad;
+        if (muricionArma <= 0)
+        {
+            inventario.RemoveItem(slotProperties, 1);
+        }
     }
 
     public void UpdateNumberObj()
@@ -45,11 +61,11 @@ public class Slot : MonoBehaviour
 
     public void UseItem()
     {
-        item.GetComponent<Item>().ItemUsage();
+        inventario.UseItem(slotProperties);
     }
 
-    public void OnClickBotton()
+    /*public void OnClickBotton()
     {
         UseItem();
-    }
+    }*/
 }

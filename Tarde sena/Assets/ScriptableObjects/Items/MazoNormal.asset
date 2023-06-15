@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92b7b318debd7c48b8d409f8e7997a1, type: 3}
   m_Name: MazoNormal
   m_EditorClassIdentifier: 
-  iD: 0
+  iD: 9
   nombre: Mazo Normal
   description: El mazo mas normal de todos
   porcentajeDeSalida: 3
