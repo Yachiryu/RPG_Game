@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spawnmanager : MonoBehaviour
 {
+    public DoorPlataforme[] doorPlataformes;
     public generador[] spawnpoints;
 
     bool spawnearTodo = true, inicioOleada, puertaCerrada;
@@ -23,13 +24,13 @@ public class spawnmanager : MonoBehaviour
     int bossIndex = -1;
     void Start()
     {
+
         spawnpoints = new generador[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
             spawnpoints[i] = transform.GetChild(i).GetComponent<generador>();
             if (spawnpoints[i].boss)
                 bossIndex = i;
-
         }
         RellearSpawnPoints();
 
@@ -41,7 +42,7 @@ public class spawnmanager : MonoBehaviour
             if (inicioOleada && !puertaCerrada)
             {
                 puertaCerrada = true;
-                print("Cerrar puertas");
+                Puertas(true);
                 GenerarEnemigos(this, GameManager.Instance.etapa);
             }
         }
@@ -99,6 +100,7 @@ public class spawnmanager : MonoBehaviour
                 if (e.spawnVacio <= 0)
                 {
                     spawnearTodo = true;
+                    Puertas(false);
                     RellearSpawnPoints();
                     GameManager.Instance.etapa.cantidadEtapas--;//Disminuye la cantidad de etapas
                     GameManager.Instance.Oleada(this, GameManager.Instance.etapa);//Invoca la siguiente etapa
@@ -134,6 +136,14 @@ public class spawnmanager : MonoBehaviour
         foreach (var item in spawnpoints)
         {
             item.spawnBloqueado = bloquear;
+        }
+    }
+
+    void Puertas(bool estadoPuerta)
+    {
+        foreach (var item in doorPlataformes)
+        {
+            item.MovePlataform(estadoPuerta);
         }
     }
 

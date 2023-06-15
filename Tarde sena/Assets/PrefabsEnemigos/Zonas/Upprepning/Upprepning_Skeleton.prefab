@@ -3094,7 +3094,7 @@ MonoBehaviour:
   DeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7239854685079534827, guid: d81311162f2403a40b36b92a9525864f, type: 3}
+      - m_Target: {fileID: 7378786834522159996}
         m_TargetAssemblyTypeName: Vida, Assembly-CSharp
         m_MethodName: EventoMuerteIA
         m_Mode: 2

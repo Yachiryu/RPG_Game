@@ -156,20 +156,34 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void UseItem(ItemProperties item)
+    public void UseItem(Slot item)
     {
-        switch (item.type)
+        ItemProperties itempro = item.slotProperties;
+        switch (itempro.type)
         {
             case ItemProperties.Tipo.weapon:
-                weaponManager.twoHandSword = item.objetoAsociado;
+                weaponManager.twoHandSword = itempro.objetoAsociado;
+                weaponManager.twoHandSword.GetComponent<Item>().slot = item; 
                 break;
             case ItemProperties.Tipo.resources:
                 break;
             case ItemProperties.Tipo.item:
-                if (item.nombre == "")
+                if (itempro.nombre == "Posion")
                 {
-                    vida.ManejoVida(item.regeneracionVida);
-                    RemoveItem(item, 1);
+                    vida.ManejoVida(itempro.regeneracionVida);
+                    RemoveItem(itempro, 1);
+                }
+                if (itempro.nombre == "Torreta")
+                {
+                    GameObject[] trampas = GameObject.FindGameObjectsWithTag("ColocarTrampas");
+                    foreach (var i in trampas)
+                    {
+                        if (i.GetComponent<ColocarTrampa>().habilitado)
+                        {
+                            GameObject newTorreta = Instantiate(itempro.objetoAsociado,i.transform.position,i.transform.rotation);
+                            newTorreta.transform.parent = i.transform;
+                        }
+                    }
                 }
                 break;
         }

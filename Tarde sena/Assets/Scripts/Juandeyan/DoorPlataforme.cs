@@ -9,12 +9,14 @@ public class DoorPlataforme : MonoBehaviour
     public GameObject maxposition;
     public GameObject minposition;
     bool andando, cerrar;
+    public bool manual, puertaAbierta;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && manual)
         {
-           MovePlataform(true);
+            MovePlataform(puertaAbierta);
+            puertaAbierta = !puertaAbierta;
         }
     }
 
@@ -46,38 +48,10 @@ public class DoorPlataforme : MonoBehaviour
             }
         }
     }
-    private void MovePlataform(bool closed)
+    //si es true la puerta se cierra
+    public void MovePlataform(bool closed)
     {
         andando = true;
-        cerrar = closed;
-        
-      
+        cerrar = closed; 
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            MovePlataform(false);
-        }
-    }
-
-
-    /*if (plataform.transform.position.y >= maxposition.transform.position.y)
-     {
-         velocity = velocity * -1;
-         if (plataform.transform.position.y == maxposition.transform.position.y)
-         {
-             velocity = 0;
-         }
-     }
-
-    if (plataform.transform.position.y <= minposition.transform.position.y)
-     {
-         velocity = velocity * -1;
-         if (plataform.transform.position.y == maxposition.transform.position.y)
-         {
-             velocity = 0;
-         }
-     }�*/
 }

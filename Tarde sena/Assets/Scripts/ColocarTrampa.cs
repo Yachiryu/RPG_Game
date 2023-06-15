@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ColocarTrampa : MonoBehaviour
 {
+    internal bool habilitado;
+    public TextMeshProUGUI mensaje;
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && Input.GetButtonDown("Interaction"))
+        if (other.CompareTag("Player"))
         {
-            //other.
+            habilitado = true;
+            mensaje.gameObject.SetActive(true);
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            habilitado = false;
+            mensaje.gameObject.SetActive(false);
         }
     }
 }

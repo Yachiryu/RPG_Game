@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Shadow
   - Collide
+  - enemis
+  - ColocarTrampas
   layers:
   - Default
   - TransparentFX

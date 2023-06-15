@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3549515088978477930}
   - component: {fileID: -8165454879228370315}
   m_Layer: 0
-  m_Name: Spawns
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,9 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed567fb206ab5ee47bd045beb88c2fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorPlataformes: []
   spawnpoints: []
-  boss: {fileID: 0}
   paraOleadas: 0
+  rangoAparicion: 0
+  tiempoEsperaDesaparicion: 0
 --- !u!65 &-8165454879228370315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -201,7 +203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186291395504461786, guid: dc5ed3e02509ca945a4a53e5b6172302, type: 3}
       propertyPath: boss
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6186291395504461789, guid: dc5ed3e02509ca945a4a53e5b6172302, type: 3}
       propertyPath: m_RootOrder

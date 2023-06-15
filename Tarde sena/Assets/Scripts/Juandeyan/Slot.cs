@@ -61,7 +61,7 @@ public class Slot : MonoBehaviour
 
     public void UseItem()
     {
-        inventario.UseItem(slotProperties);
+        inventario.UseItem(this);
     }
 
     /*public void OnClickBotton()
