@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RPGCharacterAnims;
+using RPGCharacterAnims.Lookups;
+using RPGCharacterAnims.Actions;
 
 public class Vida : MonoBehaviour
 {
+    public RPGCharacterController rpgCharacterController;
+
     public int vida = 100;
     public Slider barravida;
 
     void Start()
     {
+        rpgCharacterController = GetComponent<RPGCharacterController>();
         StartCoroutine(Mientras());
     }
 
@@ -27,9 +33,13 @@ public class Vida : MonoBehaviour
     public void ManejoVida(int cantidad)
     {
         vida -= cantidad;
-        if (vida <= 0)
+        if (vida > 0)
         {
-            //muere
+            rpgCharacterController.StartAction(HandlerTypes.GetHit, new HitContext());
+        }
+        else
+        {
+            rpgCharacterController.StartAction(HandlerTypes.Knockdown, new HitContext((int)KnockdownType.Knockdown1, Vector3.back));
         }
     }
 

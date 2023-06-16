@@ -75,4 +75,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a134f5e787e09f84e9eba221690a3cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDialogos: []
+  triggerDialogos:
+  - {fileID: 0}
