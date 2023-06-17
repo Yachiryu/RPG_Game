@@ -2626,6 +2626,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 1056311057}
+  objetosADesactivar:
+  - {fileID: 1938887013}
+  - {fileID: 1293565779}
+  - {fileID: 1435294906}
+  - {fileID: 1285317663}
 --- !u!1 &1041996652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,6 +2845,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109268184}
   m_CullTransparentMesh: 1
+--- !u!1 &1285317663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2390769756403776010, guid: 5bfaf4d2585146b4b8355b47ebfad27e, type: 3}
+  m_PrefabInstance: {fileID: 2390769756565162269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1292246526
 GameObject:
   m_ObjectHideFlags: 0

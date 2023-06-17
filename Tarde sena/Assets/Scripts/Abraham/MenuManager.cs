@@ -5,33 +5,47 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public GameObject menuPausa;
-    private bool on = false; // Variable para controlar el estado del menú de pausa
+    public GameObject[] objetosADesactivar;
 
-    // Update is called once per frame
+    private bool on = false;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ControladorDelMenu(); // Llama al método para abrir o cerrar el menú de pausa
-            ControladorDelTiempo(); // Llama al método para pausar o reanudar el tiempo
+            ControladorDelMenu();
+            ControladorDelTiempo();
         }
     }
 
     public void ControladorDelMenu()
     {
-        on = !on; // Cambia el estado del menú de pausa (abierto o cerrado)
-        menuPausa.SetActive(on); // Activa o desactiva el menú de pausa según el estado actual
+        on = !on;
+        menuPausa.SetActive(on);
+
+        if (!on)
+        {
+            DesactivarObjetos();
+        }
     }
 
     public void ControladorDelTiempo()
     {
         if (on)
         {
-            Time.timeScale = 0f; // Pausa el tiempo estableciendo Time.timeScale en 0
+            Time.timeScale = 0f;
         }
         else
         {
-            Time.timeScale = 1f; // Reanuda el tiempo estableciendo Time.timeScale en 1
+            Time.timeScale = 1f;
+        }
+    }
+
+    private void DesactivarObjetos()
+    {
+        foreach (GameObject objeto in objetosADesactivar)
+        {
+            objeto.SetActive(false);
         }
     }
 }

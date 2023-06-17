@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DescripcionObjeto : MonoBehaviour
 {
@@ -11,19 +12,16 @@ public class DescripcionObjeto : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && EstaElMouseEncima())
+        if (Input.GetMouseButtonDown(0) && EstaElMouseEncima() && !EstaSobreObjetoUI())
         {
             if (panelActual != null)
             {
-                Destroy(panelActual);
-                panelActual = null;
+                MoverPanelExistente();
             }
-
-            Vector2 panelPosition = GetMousePositionOnCanvas();
-
-            panelActual = Instantiate(panelPrefab, panelPosition, Quaternion.identity);
-
-            panelActual.transform.SetParent(canvas.transform, false);
+            else
+            {
+                CrearNuevoPanel();
+            }
         }
     }
 
@@ -43,15 +41,32 @@ public class DescripcionObjeto : MonoBehaviour
         return false;
     }
 
-    private Vector2 GetMousePositionOnCanvas()
+    private bool EstaSobreObjetoUI()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return EventSystem.current.IsPointerOverGameObject();
+    }
 
+    private void CrearNuevoPanel()
+    {
+        Vector2 mousePosition = Input.mousePosition;
         RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-        Vector2 panelPosition;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, null, out panelPosition);
 
-        return panelPosition;
+        Vector2 panelPosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, mousePosition, null, out panelPosition);
+
+        panelActual = Instantiate(panelPrefab, canvas.transform);
+        panelActual.transform.localPosition = panelPosition;
+    }
+
+    private void MoverPanelExistente()
+    {
+        Vector2 mousePosition = Input.mousePosition;
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        Vector2 panelPosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, mousePosition, null, out panelPosition);
+
+        panelActual.transform.localPosition = panelPosition;
     }
 
     private void OnMouseExit()
