@@ -5,7 +5,7 @@ using RPGCharacterAnims;
 
 public class Ataque : MonoBehaviour
 {
-    [SerializeField] private Transform centroGolpe;
+    [SerializeField] private Transform centroGolpe, armas;
     internal float esperaArma;
     private float tiempoEspera;
     
@@ -37,27 +37,38 @@ public class Ataque : MonoBehaviour
 
     public void Attack()
     {
-        onAttack = true;
-        armaActual = transform.GetComponent<RPGCharacterWeaponController>().twoHandSword;
-        ItemProperties proItem = armaActual.GetComponent<Item>().itemProperties;
-        esperaArma = proItem.ColDown;
-
-        Collider[] objetos = Physics.OverlapSphere(centroGolpe.position, radioGolpe);
-
-        foreach (Collider collisionador in objetos)
+        bool atacar = false;
+        for (int i = 0; i < armas.childCount; i++)
         {
-            if(collisionador.CompareTag("enemis"))
+            if (armas.GetChild(i).gameObject.activeInHierarchy)
             {
-                if (!collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().IsDead)
-                {
-                    collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.daño, null, transform);
-
-                }
+                atacar = true;
             }
         }
-        Slot slot = armaActual.GetComponent<Item>().slot;
-        slot.UpdateUsoArma(proItem.velDesgateArma);
+        if (atacar)
+        {
+            onAttack = true;
+            armaActual = transform.GetComponent<RPGCharacterWeaponController>().twoHandSword;
+            ItemProperties proItem = armaActual.GetComponent<Item>().itemProperties;
+            esperaArma = proItem.ColDown;
 
+            Collider[] objetos = Physics.OverlapSphere(centroGolpe.position, radioGolpe);
+
+            foreach (Collider collisionador in objetos)
+            {
+                if(collisionador.CompareTag("enemis"))
+                {
+                    if (!collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().IsDead)
+                    {
+                        collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.daño, null, transform);
+
+                    }
+                }
+            }
+            Slot slot = armaActual.GetComponent<Item>().slot;
+            slot.armaTwohandSword = armaActual;
+            slot.UpdateUsoArma(proItem.velDesgateArma);
+        }
     }
 
     private void OnDrawGizmos()

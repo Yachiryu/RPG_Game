@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotar : MonoBehaviour
 {
-    [SerializeField] internal float velocidadRotacion;
+    [SerializeField][Range(-0.8f,0.8f)] internal float velocidadRotacion;
     [SerializeField] internal EjeRotacion ejeRotacion;
 
     public AnimationCurve funcionMovimiento;
@@ -13,7 +13,9 @@ public class Rotar : MonoBehaviour
     float equis;
 
     private float funcion;
-    public bool rotarConstantemente, iniciarRotacion;
+    public bool rotarConstantemente;
+
+    bool iniciarRotacion;
 
     private Vector3 anguloInicial;
 
@@ -22,6 +24,7 @@ public class Rotar : MonoBehaviour
         if (rotarConstantemente)
         {
             iniciarRotacion = true;
+            anguloFinal = 360;
         }
             
     }
@@ -30,20 +33,16 @@ public class Rotar : MonoBehaviour
         if (iniciarRotacion)
         {
             if (rotarConstantemente)
-            {
                 funcion = rotacionConstante.Evaluate(equis);
-            }
             else
-            {
                 funcion = funcionMovimiento.Evaluate(equis);
-            }
-            equis = equis + Time.deltaTime;
+
+            equis = equis + velocidadRotacion;
 
             switch (ejeRotacion)
             {
                 case EjeRotacion.x:
                     transform.localRotation = Quaternion.Euler(Vector3.LerpUnclamped(anguloInicial,new Vector3(anguloFinal,0,0),funcion));
-                    //transform.Rotate(new Vector3(velocidadRotacion, 0, 0) * Time.deltaTime);
                     break;
                 case EjeRotacion.y:
                     transform.localRotation = Quaternion.Euler(Vector3.LerpUnclamped(anguloInicial,new Vector3(0, anguloFinal, 0),funcion));
@@ -52,15 +51,30 @@ public class Rotar : MonoBehaviour
                     transform.localRotation = Quaternion.Euler(Vector3.LerpUnclamped(anguloInicial,new Vector3(0,0, anguloFinal),funcion));
                     break;
             }
+            if (Mathf.Abs(funcion)>=1)
+            {
+                equis = 0;
+                if (!rotarConstantemente)
+                {
+                    iniciarRotacion = false;
+                }
+            }
 
         }
 
 
     }
 
-    public void EmpezarRotacion()
+    public void EmpezarRotacion(float angFinal, bool invertirVelocidad = false)
     {
         anguloInicial = transform.rotation.eulerAngles;
+        //anguloInicial = new Vector3(90,0,0);
+        anguloFinal = angFinal;
+        if (invertirVelocidad)
+        {
+            velocidadRotacion *= -1;
+
+        }
         iniciarRotacion = true;
     }
 

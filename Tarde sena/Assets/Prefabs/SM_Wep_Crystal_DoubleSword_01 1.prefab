@@ -116,5 +116,6 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   weapon: {fileID: 0}
   playersWeapon: 0
+  slot: {fileID: 0}
   itemProperties: {fileID: 11400000, guid: bbbfb6127633d1f4da54b792578b7a5a, type: 2}
   objeto: {fileID: 138024}

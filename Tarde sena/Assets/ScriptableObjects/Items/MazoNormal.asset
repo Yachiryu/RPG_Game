@@ -17,9 +17,13 @@ MonoBehaviour:
   description: El mazo mas normal de todos
   porcentajeDeSalida: 3
   regeneracionVida: 0
-  objetoAsociado: {fileID: 0}
+  objetoAsociado: {fileID: 177728, guid: 6bead58e2d8f8a0479844ea9b9d76b90, type: 3}
   icon: {fileID: 21300000, guid: ac7160d4e13323346ab404b43dd20b69, type: 3}
   type: 0
+  "da\xF1o": 0
+  ColDown: 0
+  desgasteArma: 0
+  velDesgateArma: 0
   materialsToCraft:
   - material: {fileID: 11400000, guid: 11a4fc4439497344eb9950f39117da0c, type: 2}
     cantidad: 1

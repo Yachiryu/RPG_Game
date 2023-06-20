@@ -17,7 +17,11 @@ MonoBehaviour:
   description: El mazo mas poderoso del imalaya
   porcentajeDeSalida: 0.1
   regeneracionVida: 0
-  objetoAsociado: {fileID: 0}
+  objetoAsociado: {fileID: 191070, guid: 088f2a6296b8d0841ac433ee47186ed2, type: 3}
   icon: {fileID: 21300000, guid: d88d5d4b023cd394e90946bf6c863676, type: 3}
   type: 0
+  "da\xF1o": 0
+  ColDown: 0
+  desgasteArma: 0
+  velDesgateArma: 0
   materialsToCraft: []

@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     internal bool enDialogo;
 
 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,8 +32,8 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this);
         }
-        //DontDestroyOnLoad(this);
     }
 
     private void Start()

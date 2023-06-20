@@ -44,7 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65bbdf715ca92c438b91dd3799bc587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemisPrefb:
-  - {fileID: 8378475634737617591, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
+  mapsEnemys:
+  - sceneName: Santiago
+    boss: []
+    prefabEnemigos:
+    - {fileID: 1914898760154058836, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
+    - {fileID: 6879917350300084751, guid: c129313a812d89446990766d39039f39, type: 3}
+  - sceneName: 
+    boss: []
+    prefabEnemigos: []
+  - sceneName: 
+    boss: []
+    prefabEnemigos: []
+  - sceneName: 
+    boss: []
+    prefabEnemigos: []
+  enemisPrefb: []
   currentEnemigosSpawn: 0
   boss: 0

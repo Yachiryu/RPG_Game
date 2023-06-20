@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class generador : MonoBehaviour
 {
+    
+    public MapsEnemys[] mapsEnemys;
     public GameObject[] enemisPrefb;
     public int currentEnemigosSpawn;
     [Tooltip("Activar si este Generador contendra un Boss")]
@@ -11,10 +14,19 @@ public class generador : MonoBehaviour
     internal bool spawnBloqueado, corrutinaCSpawnear;
     internal spawnmanager padre;
 
-
     private void Start()
     {
         padre = transform.parent.GetComponent<spawnmanager>();
+        foreach (var item in mapsEnemys)
+        {
+            if (item.sceneName == SceneManager.GetActiveScene().name)
+            {
+                if (!boss)
+                    enemisPrefb = item.prefabEnemigos;
+                else
+                    enemisPrefb = item.boss;
+            }
+        }
     }
     public IEnumerator CSpawnear(float seconds)
     {
@@ -57,5 +69,15 @@ public class generador : MonoBehaviour
                 }
             }
         }
+    }
+    
+
+    [System.Serializable]
+    public class MapsEnemys
+    {
+        public string sceneName;
+        public GameObject[] boss;
+        public GameObject[] prefabEnemigos;
+       
     }
 }

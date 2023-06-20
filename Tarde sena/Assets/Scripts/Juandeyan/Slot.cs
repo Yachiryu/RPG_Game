@@ -10,14 +10,9 @@ public class Slot : MonoBehaviour
     public GameObject item;
     public GameObject panelCraft;
     public int muricionArma;
-
-    //public int iD;
-    //public string type;
-    //public string nombre;
-    //public string description;
+    internal GameObject armaTwohandSword;
 
     public bool empty;
-    //public Sprite icon;
 
     public Transform slotIconGameObject;
 
@@ -25,7 +20,6 @@ public class Slot : MonoBehaviour
 
     public TextMeshProUGUI numberObjText;
 
-    //public ItemProperties.Tipo type;
 
     public ItemProperties slotProperties;
     public ItemProperties slotVacio;
@@ -50,6 +44,7 @@ public class Slot : MonoBehaviour
         muricionArma -= cantidad;
         if (muricionArma <= 0)
         {
+            armaTwohandSword = null;
             inventario.RemoveItem(slotProperties, 1);
         }
     }
@@ -61,7 +56,7 @@ public class Slot : MonoBehaviour
 
     public void UseItem()
     {
-        inventario.UseItem(slotProperties);
+        inventario.UseItem(this);
     }
 
     /*public void OnClickBotton()

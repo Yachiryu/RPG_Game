@@ -17,9 +17,13 @@ MonoBehaviour:
   description: La peor hacha de todas
   porcentajeDeSalida: 5
   regeneracionVida: 0
-  objetoAsociado: {fileID: 0}
+  objetoAsociado: {fileID: 197142, guid: 77904c5888bd504469e0fa8994ec5e81, type: 3}
   icon: {fileID: 21300000, guid: 48b5f1d1f7ad543479734e6702fe65f2, type: 3}
   type: 0
+  "da\xF1o": 0
+  ColDown: 0
+  desgasteArma: 0
+  velDesgateArma: 0
   materialsToCraft:
   - material: {fileID: 11400000, guid: e3373de8c7346534ba4676218d643829, type: 2}
     cantidad: 4

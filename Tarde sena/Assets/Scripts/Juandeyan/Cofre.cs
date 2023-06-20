@@ -10,13 +10,16 @@ public class Cofre : MonoBehaviour
     List<int> objetos = new List<int>();
     public ItemProperties[] objetosFijos;
 
+    public ParticleSystem openEfect;
     public MeshCofre meshBossCofre;
     bool cofreAbierto;
 
-
+    public AudioSource fuenteAudio;
+    //public AudioClip sonidoCofre;
 
     private void Start()
     {
+        fuenteAudio = GetComponent<AudioSource>();
         cofreAbierto = true;
         maxObjects = Mathf.Clamp(maxObjects, 1, objectsOfRandomChest.Length);
         if (boss)
@@ -32,20 +35,18 @@ public class Cofre : MonoBehaviour
         if (e.enEspera == true)
         {
             cofreAbierto = true;
+            GetComponentInChildren<Rotar>().EmpezarRotacion(180, true);
+            fuenteAudio.Play();
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.P))
-        {
-            GetComponentInChildren<Rotar>();
-        
-        }
-
         if (other.tag == "Player" && Input.GetButtonDown("Interaction") && cofreAbierto)
         {
             cofreAbierto = false;
-
+            GetComponentInChildren<Rotar>().EmpezarRotacion(-90);
+            openEfect.Play();
+            fuenteAudio.Play();
             if (boss)
             {
                 foreach (var item in objetosFijos)
