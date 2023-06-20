@@ -1074,6 +1074,18 @@ PrefabInstance:
       value: Subtitulos
       objectReference: {fileID: 0}
     - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
+      propertyPath: m_fontSize
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -1084,6 +1096,14 @@ PrefabInstance:
     - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
       propertyPath: m_fontColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571487260588177765, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1571487260588177766, guid: b94ed9911c06be8489daf1da2370c1e2, type: 3}
       propertyPath: tiempoDuracionTexto
@@ -1354,11 +1374,11 @@ PrefabInstance:
     - target: {fileID: 7385685014166491352, guid: d8815116885ea5d44b964098a7dbf6af, type: 3}
       propertyPath: triggerDialogos.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a901dbcf70b23ad43b9d2aae4dfb0df7, type: 2}
+      objectReference: {fileID: 11400000, guid: dc29d1c02e865d8449bd8b5f5f698d4a, type: 2}
     - target: {fileID: 7385685014166491352, guid: d8815116885ea5d44b964098a7dbf6af, type: 3}
       propertyPath: triggerDialogos.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: dc29d1c02e865d8449bd8b5f5f698d4a, type: 2}
+      objectReference: {fileID: 11400000, guid: a901dbcf70b23ad43b9d2aae4dfb0df7, type: 2}
     m_RemovedComponents:
     - {fileID: 862622494989996479, guid: d8815116885ea5d44b964098a7dbf6af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d8815116885ea5d44b964098a7dbf6af, type: 3}
