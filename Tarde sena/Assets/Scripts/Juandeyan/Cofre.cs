@@ -11,11 +11,13 @@ public class Cofre : MonoBehaviour
     public ItemProperties[] objetosFijos;
 
     public ParticleSystem openEfect;
+    public Rotar rotar;
     public MeshCofre meshBossCofre;
     bool cofreAbierto;
 
     public AudioSource fuenteAudio;
     //public AudioClip sonidoCofre;
+
 
     private void Start()
     {
@@ -35,7 +37,7 @@ public class Cofre : MonoBehaviour
         if (e.enEspera == true)
         {
             cofreAbierto = true;
-            GetComponentInChildren<Rotar>().EmpezarRotacion(180, true);
+            rotar.EmpezarRotacion(180,true);
             fuenteAudio.Play();
         }
     }
@@ -44,7 +46,7 @@ public class Cofre : MonoBehaviour
         if (other.tag == "Player" && Input.GetButtonDown("Interaction") && cofreAbierto)
         {
             cofreAbierto = false;
-            GetComponentInChildren<Rotar>().EmpezarRotacion(-90);
+            GetComponentInChildren<Rotar>().EmpezarRotacion(-90,true);
             openEfect.Play();
             fuenteAudio.Play();
             if (boss)

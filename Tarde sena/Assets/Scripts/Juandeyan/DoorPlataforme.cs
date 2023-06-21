@@ -36,6 +36,7 @@ public class DoorPlataforme : MonoBehaviour
         if (andando)
         {
             //fuenteAudio.clip = sonidoPuertaFuncionando;
+            print("Abriendo");
             fuenteAudio.Play();
             contador += velocity;
             if (!cerrar)

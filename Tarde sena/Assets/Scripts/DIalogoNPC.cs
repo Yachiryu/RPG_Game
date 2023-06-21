@@ -10,6 +10,7 @@ public class DIalogoNPC : MonoBehaviour
     public TextMeshProUGUI texto;
     public AudioSource fuenteAudioTexto;
     [SerializeField] float tiempoDuracionTexto;
+    public GameObject image;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class DIalogoNPC : MonoBehaviour
     IEnumerator ReproducirDialogo(Dialogos.Texto lista)
     {
         GameManager.Instance.enDialogo = true;
+        image.SetActive(true);
         yield return new WaitForSeconds(1);
         foreach (var item in lista.contenedor)
         {
@@ -35,6 +37,7 @@ public class DIalogoNPC : MonoBehaviour
             yield return new WaitForSeconds(tiempoDuracionTexto);
         }
         texto.text = "";
+        image.SetActive(false);
         GameManager.Instance.enDialogo = false;
     } 
 }
