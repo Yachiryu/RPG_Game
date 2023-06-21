@@ -4348,7 +4348,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9150411887136047822}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6977987884488618532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4495,7 +4507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4007874871881271744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4954374096507045164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4941,7 +4965,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8464962854545274035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6687893976889307814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,7 +5200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5295883237924311551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9123062895706121243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8684,7 +8732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4552017034413813212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2249235782861162480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10271,7 +10331,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3401399575049133079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &365983454830813138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14950,7 +15022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3776245, y: 0.97039926}
   m_AnchorMax: {x: 0.6698645, y: 1.0331192}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: -0.000019073486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8641226545655984554
@@ -15830,7 +15902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3776245, y: 0.97039926}
   m_AnchorMax: {x: 0.6698645, y: 1.0331192}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: -0.000019073486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8641226545773753866
@@ -16676,7 +16748,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8641226545958840469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7047418875772566691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17659,7 +17743,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8641226546332259470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5003442826504473559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18076,7 +18172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3776245, y: 0.97039926}
   m_AnchorMax: {x: 0.6698645, y: 1.0331192}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: -0.000019073486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8641226546438526311
@@ -18864,7 +18960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3776245, y: 0.97039926}
   m_AnchorMax: {x: 0.6698645, y: 1.0331192}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: -0.000019073486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8641226546838598178
@@ -19704,7 +19800,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8641226547135705572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6977987884488618532}
+        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &196422760738184984
 MonoBehaviour:
   m_ObjectHideFlags: 0

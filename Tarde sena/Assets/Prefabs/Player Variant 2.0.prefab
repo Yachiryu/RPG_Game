@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 5824416137074884570}
   - component: {fileID: 7743910529195163395}
   - component: {fileID: 8238179810643864646}
+  - component: {fileID: 6818459388950191885}
   m_Layer: 0
   m_Name: Character-Pricipal
   m_TagString: Player
@@ -488,7 +489,7 @@ MonoBehaviour:
     isHead: 1
   Walkable:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   ownCollider: {fileID: 8900407873795241748}
   radius: 0.6
 --- !u!114 &8900407873798571896
@@ -559,7 +560,7 @@ MonoBehaviour:
   debugDoWeaponSwitch: 1
   debugWeaponVisibility: 1
   debugSetAnimator: 1
-  twoHandSword: {fileID: 5176417704702518716}
+  twoHandSword: {fileID: 0}
 --- !u!54 &8900407873786679800
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -700,9 +701,18 @@ MonoBehaviour:
   inventoryEnabled: 0
   crafteo_Scrip: {fileID: 0}
   inventory: {fileID: 0}
-  weaponManager: {fileID: 0}
-  vida: {fileID: 0}
+  weaponManager: {fileID: 8796439783961886174}
+  padreArmas: {fileID: 8900407874119261641}
+  vida: {fileID: 7743910529195163395}
   slotHolders: []
+--- !u!81 &6818459388950191885
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900407873792045724}
+  m_Enabled: 1
 --- !u!1 &8900407873849317882
 GameObject:
   m_ObjectHideFlags: 0
@@ -6482,11 +6492,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 469862, guid: 8ed1055e839ef2d4fab82ced6588e1da, type: 3}
   m_PrefabInstance: {fileID: 5176417704702389872}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5176417704702518716 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 134092, guid: 8ed1055e839ef2d4fab82ced6588e1da, type: 3}
-  m_PrefabInstance: {fileID: 5176417704702389872}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5176417704847446011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6948,6 +6953,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 88.125
       objectReference: {fileID: 0}
+    - target: {fileID: 1133497767896494972, guid: cb1dfe60dc5208a43bbb9b8804132b9e, type: 3}
+      propertyPath: slot
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb1dfe60dc5208a43bbb9b8804132b9e, type: 3}
 --- !u!4 &5176417706044157269 stripped
@@ -7259,6 +7268,10 @@ PrefabInstance:
     - target: {fileID: 422976, guid: 155a426b75b059643aae0b747f17056d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -82.519
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790296965404610854, guid: 155a426b75b059643aae0b747f17056d, type: 3}
+      propertyPath: slot
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155a426b75b059643aae0b747f17056d, type: 3}

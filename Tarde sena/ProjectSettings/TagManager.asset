@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Shadow
   - Collide
+  - enemis
+  - craftZone
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - TempCast
   - Walkable
-  - 
+  - Walls
   - 
   - 
   - 

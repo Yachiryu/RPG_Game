@@ -51,6 +51,7 @@ public class DoorPlataforme : MonoBehaviour
             {
                 fuenteAudio.Stop();
                 contador = 0;
+                //fuenteAudio.Pause();
                 andando = false;
             }
         }

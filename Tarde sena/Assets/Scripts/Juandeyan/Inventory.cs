@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public GameObject inventory;
 
     public RPGCharacterWeaponController weaponManager;
+    public Transform padreArmas;
     public Vida vida;
     private int allSlots;
 
@@ -162,8 +163,14 @@ public class Inventory : MonoBehaviour
         switch (itempro.type)
         {
             case ItemProperties.Tipo.weapon:
-                weaponManager.twoHandSword = itempro.objetoAsociado;
-                weaponManager.twoHandSword.GetComponent<Item>().slot = item; 
+                for (int i = 0; i < padreArmas.childCount; i++)
+                {
+                    if (padreArmas.GetChild(i).gameObject.name == itempro.objetoAsociado.name)
+                    {
+                        weaponManager.twoHandSword = padreArmas.GetChild(i).gameObject;
+                        weaponManager.twoHandSword.GetComponent<Item>().slot = item; 
+                    }
+                }
                 break;
             case ItemProperties.Tipo.resources:
                 break;
