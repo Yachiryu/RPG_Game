@@ -56,6 +56,7 @@ public class Slot : MonoBehaviour
 
     public void UseItem()
     {
+        
         inventario.UseItem(this);
     }
 

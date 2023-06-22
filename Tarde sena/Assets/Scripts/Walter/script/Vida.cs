@@ -32,7 +32,7 @@ public class Vida : MonoBehaviour
 
     public void ManejoVida(int cantidad)
     {
-        vida -= cantidad;
+        vida += cantidad;
         if (vida > 0)
         {
             rpgCharacterController.StartAction(HandlerTypes.GetHit, new HitContext());

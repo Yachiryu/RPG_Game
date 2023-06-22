@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     }
     public void Oleada(object sender, Etapa e)//Funcion que invoca las Oleadas
     {
+
         for (var i = 0; i < etapa.spawnsManagers.Length; i++)
         {
             if (i == etapa.spawnsManagers.Length - etapa.cantidadEtapas)

@@ -15,7 +15,7 @@ MonoBehaviour:
   iD: 2
   nombre: Espada Regular
   description: La peor espada de todas
-  porcentajeDeSalida: 5
+  porcentajeDeSalida: 100
   regeneracionVida: 0
   objetoAsociado: {fileID: 188602, guid: 155a426b75b059643aae0b747f17056d, type: 3}
   icon: {fileID: 21300000, guid: 93ade276f8fd2b647a3663c1eba65363, type: 3}
