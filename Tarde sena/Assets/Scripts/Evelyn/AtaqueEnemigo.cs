@@ -32,7 +32,7 @@ public class AtaqueEnemigo : MonoBehaviour
         {
             if (collisionador.CompareTag("Player"))
             {
-                if (!collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().IsDead)
+                if (collisionador.GetComponent<Vida>().vida>0)
                 {
                     collisionador.GetComponent<Vida>().ManejoVida(-iA.CurrentDamageAmount);
 

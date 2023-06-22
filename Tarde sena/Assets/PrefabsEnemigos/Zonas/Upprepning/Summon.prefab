@@ -1848,7 +1848,7 @@ MonoBehaviour:
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 4
+  TabNumber: 2
   TemperamentTabNumber: 5
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 2
@@ -2196,7 +2196,7 @@ MonoBehaviour:
     m_Bits: 4294967295
 --- !u!95 &5456240862811303214
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2213,7 +2213,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!65 &5456240862801792310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2439,6 +2439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rpgCharacterController: {fileID: 0}
+  vida: 100
+  barravida: {fileID: 0}
 --- !u!114 &7057155501541196683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,6 +2454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5159977f33152408d29cbd8c424326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 3840650143481366076}
+  radioGolpe: 1.17
+  iA: {fileID: 5456240862801792311}
 --- !u!1 &5456240862801796668
 GameObject:
   m_ObjectHideFlags: 0
