@@ -63,9 +63,12 @@ MonoBehaviour:
     - {fileID: 5456240862801792270, guid: 526c51ea0bc2e8c47a9daf00e64232d7, type: 3}
     - {fileID: 5947256099320671639, guid: ba29c5e09350dc947b5601dd52446cd2, type: 3}
     - {fileID: 5383019470830230400, guid: 646e2ab39b9e3bb4788844b0dae30890, type: 3}
-  - sceneName: 
-    boss: []
-    prefabEnemigos: []
+  - sceneName: ZonaUpprepnig
+    boss:
+    - {fileID: 2343537817949427216, guid: 188f94345a82b554d959bfb156e63067, type: 3}
+    prefabEnemigos:
+    - {fileID: 5947256099320671639, guid: ba29c5e09350dc947b5601dd52446cd2, type: 3}
+    - {fileID: 5383019470830230400, guid: 646e2ab39b9e3bb4788844b0dae30890, type: 3}
   enemisPrefb: []
   currentEnemigosSpawn: 0
   boss: 0
