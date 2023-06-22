@@ -30,6 +30,7 @@ public class Slot : MonoBehaviour
         slotIconGameObject = transform.GetChild(0);
         slotProperties = slotVacio;
         UpdateSlot();
+        UpdateNumberObj();
     }
 
     public void UpdateSlot()
@@ -51,7 +52,14 @@ public class Slot : MonoBehaviour
 
     public void UpdateNumberObj()
     {
-        numberObjText.text = numberOfObjects.ToString();
+        if (numberOfObjects > 0)
+        {
+            numberObjText.text = numberOfObjects.ToString();
+        }
+        else
+        {
+            numberObjText.text = "";
+        }
     }
 
     public void UseItem()

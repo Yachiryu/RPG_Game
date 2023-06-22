@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using RPGCharacterAnims;
 using RPGCharacterAnims.Lookups;
 using RPGCharacterAnims.Actions;
@@ -39,8 +40,15 @@ public class Vida : MonoBehaviour
         }
         else
         {
-            rpgCharacterController.StartAction(HandlerTypes.Knockdown, new HitContext((int)KnockdownType.Knockdown1, Vector3.back));
+            StartCoroutine(CRecargarEscenaEnMuerte());
         }
+    }
+
+    IEnumerator CRecargarEscenaEnMuerte()
+    {
+        rpgCharacterController.StartAction(HandlerTypes.Knockdown, new HitContext((int)KnockdownType.Knockdown1, Vector3.back));
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
    public void EventoMuerteIA(GameObject obj)

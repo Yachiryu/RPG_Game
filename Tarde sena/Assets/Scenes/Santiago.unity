@@ -2217,6 +2217,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4990554949238516934, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.445
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990554949238516934, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12.749807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990554949238516934, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.9103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990554949238516934, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990554949238516934, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990554949238516934, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.56
+      objectReference: {fileID: 0}
     - target: {fileID: 6959170314310661254, guid: f254298f50dcd524fa00543fb8b5dab9, type: 3}
       propertyPath: m_text
       value: Oprime 'i' y escoge una torreta

@@ -99,6 +99,7 @@ namespace RPGCharacterAnims
 
 		private void Attacks()
 		{
+			print("asdasd");
 			// Check if Attack Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.Attack)) { return; }
 

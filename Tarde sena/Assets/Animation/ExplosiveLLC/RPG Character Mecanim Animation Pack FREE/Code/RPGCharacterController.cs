@@ -470,6 +470,7 @@ namespace RPGCharacterAnims
         /// <param name="duration">Duration in seconds that animation is locked.</param>
         public void Attack(int attackNumber, Side attackSide, Weapon leftWeapon, Weapon rightWeapon, float duration)
         {
+            print("Atacando");
             if(ataque.onAttack == false)
             {
 	            animator.SetSide(attackSide);

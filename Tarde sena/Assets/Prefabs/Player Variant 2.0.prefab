@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad159c285c6e6ae4caa1641e7eff37c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ataque: {fileID: 0}
+  ataque: {fileID: 5824416137074884570}
   animator: {fileID: 0}
   animationSpeed: 1
   ikHands: {fileID: 0}
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centroGolpe: {fileID: 5176417705860814281}
-  armas: {fileID: 0}
+  armas: {fileID: 8900407874119261641}
   radioGolpe: 1.19
 --- !u!114 &7743910529195163395
 MonoBehaviour:

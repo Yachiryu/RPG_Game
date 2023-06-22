@@ -20,8 +20,8 @@ MonoBehaviour:
   objetoAsociado: {fileID: 134092, guid: 8ed1055e839ef2d4fab82ced6588e1da, type: 3}
   icon: {fileID: 21300000, guid: f751def2e0b6c9c438fcc18fdf826d31, type: 3}
   type: 0
-  "da\xF1o": 0
-  ColDown: 0
-  desgasteArma: 0
-  velDesgateArma: 0
+  "da\xF1o": 10
+  ColDown: 5
+  desgasteArma: 10
+  velDesgateArma: 1
   materialsToCraft: []
