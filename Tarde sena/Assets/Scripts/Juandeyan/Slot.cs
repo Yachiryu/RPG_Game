@@ -58,7 +58,10 @@ public class Slot : MonoBehaviour
         }
         else
         {
-            numberObjText.text = "";
+            if (transform.parent.name != "CraftHolder")
+            {
+                numberObjText.text = "";
+            }
         }
     }
 
