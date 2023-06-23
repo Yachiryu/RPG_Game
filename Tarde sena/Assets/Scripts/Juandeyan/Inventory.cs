@@ -160,6 +160,7 @@ public class Inventory : MonoBehaviour
     public void UseItem(Slot item)
     {
         ItemProperties itempro = item.slotProperties;
+        print(itempro.name);
         switch (itempro.type)
         {
             case ItemProperties.Tipo.weapon:
@@ -175,6 +176,7 @@ public class Inventory : MonoBehaviour
             case ItemProperties.Tipo.resources:
                 break;
             case ItemProperties.Tipo.item:
+                print("ASFASFFSASFASFASFSAF");
                 if (itempro.nombre == "Posion")
                 {
                     vida.ManejoVida(itempro.regeneracionVida);
@@ -185,10 +187,11 @@ public class Inventory : MonoBehaviour
                     GameObject[] trampas = GameObject.FindGameObjectsWithTag("ColocarTrampas");
                     foreach (var i in trampas)
                     {
-                        if (i.GetComponent<ColocarTrampa>().habilitado)
+                        if (i.GetComponent<ColocarTrampa>().habilitado && i.transform.childCount==0)
                         {
                             GameObject newTorreta = Instantiate(itempro.objetoAsociado,i.transform.position,i.transform.rotation);
                             newTorreta.transform.parent = i.transform;
+                            RemoveItem(itempro, 1);
                         }
                     }
                 }

@@ -28,7 +28,6 @@ public class Torreta : MonoBehaviour
     private void OnTriggerStay(Collider other) {
         if (other.CompareTag("enemis"))
         {
-
             if (ataque)
             {
                 ataque = false;

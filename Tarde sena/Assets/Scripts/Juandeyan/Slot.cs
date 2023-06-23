@@ -64,7 +64,7 @@ public class Slot : MonoBehaviour
 
     public void UseItem()
     {
-        
+        print($"Slot : {slotProperties.icon}, padre: {transform.parent.name}");
         inventario.UseItem(this);
     }
 

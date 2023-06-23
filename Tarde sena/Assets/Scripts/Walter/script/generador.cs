@@ -37,7 +37,7 @@ public class generador : MonoBehaviour
                 if (currentEnemigosSpawn > 0)
                 {
                     corrutinaCSpawnear = true;//hasta que esta variable no este false no puede volver a entrar a la corrutina
-                    seconds *= 60;//Convertir minutos a segundos
+                    //seconds *= 60;//Convertir minutos a segundos
                     if (transform.childCount != 0)//verificar si tiene hijos para activarlos
                     {
                         if (!spawnBloqueado)

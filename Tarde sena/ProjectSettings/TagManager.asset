@@ -8,6 +8,7 @@ TagManager:
   - Collide
   - enemis
   - craftZone
+  - ColocarTrampas
   layers:
   - Default
   - TransparentFX

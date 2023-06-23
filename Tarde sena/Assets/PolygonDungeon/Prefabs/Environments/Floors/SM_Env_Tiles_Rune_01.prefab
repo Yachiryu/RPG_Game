@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 41606106826721458}
+  - {fileID: 668395555250888164}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.000002, y: 0.09791671, z: 4.999999}
   m_Center: {x: -2.500001, y: 0.045907862, z: 2.4999995}
---- !u!1001 &3495454047568535287
+--- !u!1001 &4131795716992338849
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -109,10 +109,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileTrampa
       objectReference: {fileID: 0}
-    - target: {fileID: 2447239226886095793, guid: bb3680683a1eeab43a55a04bd5f4714e, type: 3}
-      propertyPath: mensaje
-      value: 
-      objectReference: {fileID: 6959170314310661254}
     - target: {fileID: 3463699566063441477, guid: bb3680683a1eeab43a55a04bd5f4714e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -159,19 +155,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3680683a1eeab43a55a04bd5f4714e, type: 3}
---- !u!4 &41606106826721458 stripped
+--- !u!4 &668395555250888164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3463699566063441477, guid: bb3680683a1eeab43a55a04bd5f4714e, type: 3}
-  m_PrefabInstance: {fileID: 3495454047568535287}
+  m_PrefabInstance: {fileID: 4131795716992338849}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6959170314310661254 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5769577763642550897, guid: bb3680683a1eeab43a55a04bd5f4714e, type: 3}
-  m_PrefabInstance: {fileID: 3495454047568535287}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
