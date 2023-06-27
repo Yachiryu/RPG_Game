@@ -16,7 +16,7 @@ MonoBehaviour:
   nombre: Posion
   description: Afrodisiaca, digo, regenera vida
   porcentajeDeSalida: 30
-  regeneracionVida: 0
+  regeneracionVida: 20
   objetoAsociado: {fileID: 0}
   icon: {fileID: 21300000, guid: b7a60977d58e27f4e97a8572a29c8518, type: 3}
   type: 2
