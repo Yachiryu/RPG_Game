@@ -2223,7 +2223,7 @@ MonoBehaviour:
   - FactionIndex: 5
     RelationTypeRef: 0
   PlayerFaction:
-  - PlayerTag: Untagged
+  - PlayerTag: Player
     RelationTypeRef: 0
   StartingRunSpeed: 0
   StartingRunAnimationSpeed: 0
@@ -2612,7 +2612,7 @@ MonoBehaviour:
   RangedAttackTransform: {fileID: 0}
   CurrentTarget: {fileID: 0}
   CurrentFollowTarget: {fileID: 0}
-  PlayerTag: Untagged
+  PlayerTag: Player
   FollowTag: Player
   NonAITag: Water
   ReturningToStartInProgress: 0

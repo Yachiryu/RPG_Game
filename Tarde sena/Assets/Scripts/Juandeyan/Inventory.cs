@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPGCharacterAnims;
-
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -44,9 +44,9 @@ public class Inventory : MonoBehaviour
             {
                 slots[tipoSlot[i]][j] = slotHolders[i].transform.GetChild(j).gameObject;
 
-                if (slots[tipoSlot[i]][j].GetComponent<Slot>().item == null)
+                if (slots[tipoSlot[i]][j].GetComponent<Slot>().item == null && slots[tipoSlot[i]][j].GetComponent<Slot>().numberOfObjects == 0)
                 {
-                    slots[tipoSlot[i]][j].GetComponent<Slot>().empty = true;
+                        slots[tipoSlot[i]][j].GetComponent<Slot>().empty = true;
                 }
             }
         }
@@ -146,7 +146,7 @@ public class Inventory : MonoBehaviour
                     else
                     {
                         slotAdd.slotProperties = slotAdd.slotVacio;
-
+                        slotAdd.empty = true;
                         slotAdd.numberOfObjects--;
                         slotAdd.UpdateSlot();
                         slotAdd.UpdateNumberObj();
@@ -176,13 +176,13 @@ public class Inventory : MonoBehaviour
             case ItemProperties.Tipo.resources:
                 break;
             case ItemProperties.Tipo.item:
-                print("ASFASFFSASFASFASFSAF");
+                print("ACA ESTOOOOOOOOOOOOOOOOy0");
                 if (itempro.nombre == "Posion")
                 {
                     vida.ManejoVida(itempro.regeneracionVida);
                     RemoveItem(itempro, 1);
                 }
-                if (itempro.nombre == "Torreta")
+                else if (itempro.nombre == "Torreta")
                 {
                     GameObject[] trampas = GameObject.FindGameObjectsWithTag("ColocarTrampas");
                     foreach (var i in trampas)
@@ -193,6 +193,15 @@ public class Inventory : MonoBehaviour
                             newTorreta.transform.parent = i.transform;
                             RemoveItem(itempro, 1);
                         }
+                    }
+                }
+                else if (itempro.nombre == "Cristal")
+                {
+                    print("ACA ESTOOOOOOOOOOOOOOOOy1");
+                    GameObject pasarNivel = GameObject.FindGameObjectWithTag("PortalPasarNivel");
+                    if (pasarNivel.GetComponent<PortalPasarNivel>().habilitado)
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
                     }
                 }
                 break;
