@@ -9,6 +9,7 @@ TagManager:
   - enemis
   - craftZone
   - ColocarTrampas
+  - PortalPasarNivel
   layers:
   - Default
   - TransparentFX

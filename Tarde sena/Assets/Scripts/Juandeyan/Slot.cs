@@ -71,8 +71,4 @@ public class Slot : MonoBehaviour
         inventario.UseItem(this);
     }
 
-    /*public void OnClickBotton()
-    {
-        UseItem();
-    }*/
 }
