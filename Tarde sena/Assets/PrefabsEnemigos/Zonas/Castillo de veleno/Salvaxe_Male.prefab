@@ -2628,7 +2628,7 @@ MonoBehaviour:
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 6
+  TabNumber: 4
   TemperamentTabNumber: 5
   DetectionTagsTabNumber: 2
   AnimationTabNumber: 1
@@ -3242,7 +3242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centroGolpe: {fileID: 7530096238075365520}
   radioGolpe: 0.96
-  iA: {fileID: 0}
+  iA: {fileID: 2110764388569467131}
 --- !u!1 &6907004124470484675
 GameObject:
   m_ObjectHideFlags: 0

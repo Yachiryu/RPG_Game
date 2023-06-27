@@ -2612,7 +2612,7 @@ MonoBehaviour:
   RangedAttackTransform: {fileID: 0}
   CurrentTarget: {fileID: 0}
   CurrentFollowTarget: {fileID: 0}
-  PlayerTag: Player
+  PlayerTag: Untagged
   FollowTag: Player
   NonAITag: Water
   ReturningToStartInProgress: 0
