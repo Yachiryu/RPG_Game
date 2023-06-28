@@ -12,7 +12,7 @@ public class Cofre : MonoBehaviour
 
     public ParticleSystem openEfect;
     public Rotar rotar;
-    public MeshCofre meshBossCofre;
+    //public MeshCofre meshBossCofre;
     bool cofreAbierto;
 
     public AudioSource fuenteAudio;
@@ -26,8 +26,10 @@ public class Cofre : MonoBehaviour
         maxObjects = Mathf.Clamp(maxObjects, 1, objectsOfRandomChest.Length);
         if (boss)
         {
-            GetComponent<MeshFilter>().mesh = meshBossCofre.meshCofre;
-            transform.GetChild(0).GetComponent<MeshFilter>().mesh = meshBossCofre.meshTapaCofre;
+            cofreAbierto = true;
+            rotar.EmpezarRotacion(180, true);
+            //GetComponent<MeshFilter>().mesh = meshBossCofre.meshCofre;
+            //transform.GetChild(0).GetComponent<MeshFilter>().mesh = meshBossCofre.meshTapaCofre;
         }
         GameManager.Instance.OnOleada += AbrirCofre;
     }
@@ -51,56 +53,57 @@ public class Cofre : MonoBehaviour
             fuenteAudio.Play();
             if (boss)
             {
-                foreach (var item in objetosFijos)
-                {
-                    other.GetComponent<Inventory>().AddItem(item);
-                }
+                int numberRandomOfList = Random.Range(1, objetosFijos.Length);
+                other.GetComponent<Inventory>().AddItem(objetosFijos[0]);
+                other.GetComponent<Inventory>().AddItem(objetosFijos[numberRandomOfList]);
             }
-
-            while (objetos.Count < maxObjects)
+            else
             {
+                while (objetos.Count < maxObjects)
+                {
 
-                int numberRandomOfList = Random.Range(0, objectsOfRandomChest.Length);
+                    int numberRandomOfList = Random.Range(0, objectsOfRandomChest.Length);
+                    for (int i = 0; i < objetos.Count; i++)
+                    {
+                        if (numberRandomOfList == objetos[i])
+                        {
+                            numberRandomOfList = Random.Range(0, objectsOfRandomChest.Length);
+                            i = 0;
+                        }
+                    }
+                    objetos.Add(numberRandomOfList);
+                }
+
+                bool darObjeto = false;
+
                 for (int i = 0; i < objetos.Count; i++)
                 {
-                    if (numberRandomOfList == objetos[i])
+                    int numberRandom = Random.Range(0, Mathf.CeilToInt(100f / objectsOfRandomChest[objetos[i]].porcentajeDeSalida));
+                    if (numberRandom == 0)
                     {
-                        numberRandomOfList = Random.Range(0, objectsOfRandomChest.Length);
-                        i = 0;
+                        darObjeto = true;
+                        int num = Random.Range(1, 4);
+                        for (int j = 0; j < num; j++)
+                        {
+                            other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[objetos[i]]);
+                        }
                     }
                 }
-                objetos.Add(numberRandomOfList);
-            }
-
-            bool darObjeto = false;
-
-            for (int i = 0; i < objetos.Count; i++)
-            {
-                int numberRandom = Random.Range(0, Mathf.CeilToInt(100f / objectsOfRandomChest[objetos[i]].porcentajeDeSalida));
-                if (numberRandom == 0)
+                if (!darObjeto)
                 {
-                    darObjeto = true;
-                    int num = Random.Range(1, 4);
-                    for (int j = 0; j < num; j++)
-                    {
-                        other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[objetos[i]]);
-                    }
+                    other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[0]);
                 }
+                objetos.RemoveRange(0, objetos.Count);
             }
-            if (!darObjeto)
-            {
-                other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[0]);
-            }
-            objetos.RemoveRange(0, objetos.Count);
         }
     }
 
-    [System.Serializable]
-    public class MeshCofre
-    {
-        public Mesh meshCofre;
-        public Mesh meshTapaCofre;
-    }
+    //[System.Serializable]
+    //public class MeshCofre
+    //{
+    //    public Mesh meshCofre;
+    //    public Mesh meshTapaCofre;
+    //}
     private void OnDestroy()
     {
         GameManager.Instance.OnOleada -= AbrirCofre;

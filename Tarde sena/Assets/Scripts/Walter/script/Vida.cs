@@ -12,17 +12,20 @@ public class Vida : MonoBehaviour
     public RPGCharacterController rpgCharacterController;
 
     public int vida = 100;
+    int contadorVida;
     public Slider barravida;
 
     void Start()
     {
         rpgCharacterController = GetComponent<RPGCharacterController>();
+        contadorVida = vida;
     }
 
     public void ManejoVida(int cantidad)
     {
-        vida += cantidad;
-        if (vida > 0)
+        contadorVida += cantidad;
+        contadorVida = Mathf.Clamp(contadorVida,0,vida);
+        if (contadorVida > 0)
         {
             rpgCharacterController.StartAction(HandlerTypes.GetHit, new HitContext());
         }

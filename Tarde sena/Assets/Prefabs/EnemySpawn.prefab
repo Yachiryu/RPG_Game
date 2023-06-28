@@ -52,7 +52,8 @@ MonoBehaviour:
     - {fileID: 5947256099320671639, guid: ba29c5e09350dc947b5601dd52446cd2, type: 3}
     - {fileID: 5383019470830230400, guid: 646e2ab39b9e3bb4788844b0dae30890, type: 3}
   - sceneName: Tutorial
-    boss: []
+    boss:
+    - {fileID: 5947256099320671639, guid: ba29c5e09350dc947b5601dd52446cd2, type: 3}
     prefabEnemigos:
     - {fileID: 5456240862801792270, guid: 526c51ea0bc2e8c47a9daf00e64232d7, type: 3}
     - {fileID: 5947256099320671639, guid: ba29c5e09350dc947b5601dd52446cd2, type: 3}
@@ -75,6 +76,14 @@ MonoBehaviour:
     prefabEnemigos:
     - {fileID: 1914898760154058836, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
     - {fileID: 6879917350300084751, guid: c129313a812d89446990766d39039f39, type: 3}
+  - sceneName: MausoleodeFeuer
+    boss:
+    - {fileID: 2258989399929811620, guid: 6869918f448f5a142a23c668bd2c6164, type: 3}
+    prefabEnemigos:
+    - {fileID: 1914898760154058836, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
+    - {fileID: 6879917350300084751, guid: c129313a812d89446990766d39039f39, type: 3}
+    - {fileID: 2219478789240108479, guid: c435416dd8a17d945a06df4a86d63a4e, type: 3}
+    - {fileID: 3361065332628680309, guid: 856dd3cff90d2104a8c15b85bce72cc2, type: 3}
   enemisPrefb: []
   currentEnemigosSpawn: 0
   boss: 0

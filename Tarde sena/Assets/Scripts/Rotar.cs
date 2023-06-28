@@ -67,7 +67,7 @@ public class Rotar : MonoBehaviour
 
     public void EmpezarRotacion(float angFinal, bool invertirVelocidad = false)
     {
-        anguloInicial = transform.rotation.eulerAngles;
+        anguloInicial = transform.localRotation.eulerAngles;
         //anguloInicial = new Vector3(90,0,0);
         anguloFinal = angFinal;
         if (invertirVelocidad)

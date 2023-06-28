@@ -28,7 +28,8 @@ public class Slot : MonoBehaviour
     {
         inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         slotIconGameObject = transform.GetChild(0);
-        slotProperties = slotVacio;
+        if (slotProperties == null)
+            slotProperties = slotVacio;
         UpdateSlot();
         UpdateNumberObj();
     }

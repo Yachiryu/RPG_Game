@@ -60,7 +60,7 @@ public class Ataque : MonoBehaviour
                 {
                     if (!collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().IsDead)
                     {
-                        collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.daño, null, transform);
+                        collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.danio, null, transform);
 
                     }
                 }
