@@ -28,7 +28,8 @@ public class Slot : MonoBehaviour
     {
         inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         slotIconGameObject = transform.GetChild(0);
-        slotProperties = slotVacio;
+        if (slotProperties == null)
+            slotProperties = slotVacio;
         UpdateSlot();
         UpdateNumberObj();
     }
@@ -45,7 +46,7 @@ public class Slot : MonoBehaviour
         muricionArma -= cantidad;
         if (muricionArma <= 0)
         {
-            armaTwohandSword = null;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Ataque>().DestruirArma();
             inventario.RemoveItem(slotProperties, 1);
         }
     }

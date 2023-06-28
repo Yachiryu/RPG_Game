@@ -6,6 +6,7 @@ public class spawnmanager : MonoBehaviour
 {
     public DoorPlataforme[] doorPlataformes;
     public generador[] spawnpoints;
+    public GameObject cofreBoss;
 
     bool spawnearTodo = true, inicioOleada, puertaCerrada;
 
@@ -19,6 +20,7 @@ public class spawnmanager : MonoBehaviour
     [Range(1, 5)]
     [Tooltip("Tiempo en minutos en que desapareceran los enemigos si el player sale de la zona de spawn, solo funciona si este SpawnManager no es parte de las oleadas principales del juego")]
     public float tiempoEsperaDesaparicion;
+
 
 
     int bossIndex = -1;
@@ -101,6 +103,10 @@ public class spawnmanager : MonoBehaviour
                 {
                     spawnearTodo = true;
                     Puertas(false);
+                    if (bossIndex >= 0)
+                    {
+                        Instantiate(cofreBoss,spawnpoints[bossIndex].transform.position,Quaternion.identity);
+                    }
                     RellearSpawnPoints();
                     GameManager.Instance.etapa.cantidadEtapas--;//Disminuye la cantidad de etapas
                     GameManager.Instance.Oleada(this, GameManager.Instance.etapa);//Invoca la siguiente etapa
@@ -163,7 +169,7 @@ public class spawnmanager : MonoBehaviour
         while (inicioOleada && !puertaCerrada)
         {
             yield return new WaitForSeconds(1);
-            jugador.ManejoVida(2);
+            jugador.ManejoVida(-2);
         }
     }
 

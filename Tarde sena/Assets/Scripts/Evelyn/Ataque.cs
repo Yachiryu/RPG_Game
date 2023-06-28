@@ -60,7 +60,7 @@ public class Ataque : MonoBehaviour
                 {
                     if (!collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().IsDead)
                     {
-                        collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.daño, null, transform);
+                        collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.danio, null, transform);
 
                     }
                 }
@@ -68,6 +68,18 @@ public class Ataque : MonoBehaviour
             Slot slot = armaActual.GetComponent<Item>().slot;
             slot.armaTwohandSword = armaActual;
             slot.UpdateUsoArma(proItem.velDesgateArma);
+        }
+    }
+
+    public void DestruirArma()
+    {
+        armaActual = null;
+        for (int i = 0; i < armas.childCount; i++)
+        {
+            if (armas.GetChild(i).gameObject.activeInHierarchy)
+            {
+                armas.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
 

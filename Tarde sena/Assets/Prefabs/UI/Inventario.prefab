@@ -18002,8 +18002,8 @@ MonoBehaviour:
   slotIconGameObject: {fileID: 0}
   numberOfObjects: 1
   numberObjText: {fileID: 8641226546220283222}
-  slotProperties: {fileID: 0}
-  slotVacio: {fileID: 11400000, guid: 238ede03a4c42834f8eb6cbab9f8f089, type: 2}
+  slotProperties: {fileID: 11400000, guid: 238ede03a4c42834f8eb6cbab9f8f089, type: 2}
+  slotVacio: {fileID: 11400000, guid: 191d8e0cc977f2e4cbf85497fe55b687, type: 2}
 --- !u!1 &8641226546060879223
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-
+using RPGCharacterAnims;
+using RPGCharacterAnims.Lookups;
+using RPGCharacterAnims.Actions;
 
 public class DIalogoNPC : MonoBehaviour
 {
+    
     public TextMeshProUGUI texto;
     public AudioSource fuenteAudioTexto;
     [SerializeField] float tiempoDuracionTexto;
     public GameObject image;
 
+    public bool tutorial;
+    public GameObject[] muros;
     void Start()
     {
         GameManager.Instance.OnDialogo += ActivarDialogo; // Se subscribe al evento OnDialogo
@@ -27,6 +32,8 @@ public class DIalogoNPC : MonoBehaviour
     IEnumerator ReproducirDialogo(Dialogos.Texto lista)
     {
         GameManager.Instance.enDialogo = true;
+        if (tutorial)
+            MurosTutorial(true);
         image.SetActive(true);
         yield return new WaitForSeconds(1);
         foreach (var item in lista.contenedor)
@@ -37,7 +44,17 @@ public class DIalogoNPC : MonoBehaviour
             yield return new WaitForSeconds(tiempoDuracionTexto);
         }
         texto.text = "";
+        if (tutorial)
+            MurosTutorial(false);
         image.SetActive(false);
         GameManager.Instance.enDialogo = false;
     } 
+
+    void MurosTutorial(bool activar)
+    {
+        foreach (var item in muros)
+        {
+            item.SetActive(activar);
+        }
+    }
 }
