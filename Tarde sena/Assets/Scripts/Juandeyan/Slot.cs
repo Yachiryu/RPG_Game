@@ -58,18 +58,17 @@ public class Slot : MonoBehaviour
         }
         else
         {
-            numberObjText.text = "";
+            if (transform.parent.name != "CraftHolder")
+            {
+                numberObjText.text = "";
+            }
         }
     }
 
     public void UseItem()
     {
-        
+        print($"Slot : {slotProperties.icon}, padre: {transform.parent.name}");
         inventario.UseItem(this);
     }
 
-    /*public void OnClickBotton()
-    {
-        UseItem();
-    }*/
 }

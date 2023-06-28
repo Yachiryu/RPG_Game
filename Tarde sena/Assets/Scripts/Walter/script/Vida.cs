@@ -17,18 +17,6 @@ public class Vida : MonoBehaviour
     void Start()
     {
         rpgCharacterController = GetComponent<RPGCharacterController>();
-        StartCoroutine(Mientras());
-    }
-
-    IEnumerator Mientras()
-    {
-        if (transform.tag != "Player")
-        {
-            yield return new WaitForSeconds(5);
-
-            ManejoVida(100);
-        }
-    
     }
 
     public void ManejoVida(int cantidad)

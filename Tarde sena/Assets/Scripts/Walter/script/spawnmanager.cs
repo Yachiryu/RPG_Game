@@ -13,7 +13,7 @@ public class spawnmanager : MonoBehaviour
     public bool paraOleadas;
 
     [Space]
-    [Range(1, 5)]
+    [Range(5, 60)]
     [Tooltip("Rango en minutos en que el enemigo aparecera, solo funciona si este SpawnManager no es parte de las oleadas principales del juego")]
     public float rangoAparicion;
     [Range(1, 5)]
@@ -127,7 +127,7 @@ public class spawnmanager : MonoBehaviour
             if (paraOleadas)
                 StartCoroutine(spawnpoints[index].CSpawnear(0));
             else
-                StartCoroutine(spawnpoints[index].CSpawnear(Random.Range(0.5f, rangoAparicion)));
+                StartCoroutine(spawnpoints[index].CSpawnear(Random.Range(5f, rangoAparicion)));
         //}
     }
 

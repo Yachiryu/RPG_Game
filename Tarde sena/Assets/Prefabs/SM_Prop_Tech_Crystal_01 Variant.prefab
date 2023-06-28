@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7207760359177011102}
-  - component: {fileID: 1340136302629020862}
   - component: {fileID: 130687515820036946}
   - component: {fileID: 7335492749282814006}
   - component: {fileID: 3213204783183563858}
+  - component: {fileID: 8795510980879090114}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -36,24 +36,6 @@ Transform:
   m_Father: {fileID: 1558125805154047869}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1340136302629020862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6794375223384264217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef560a123c8a19e42a587e74772dd8fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particulas: {fileID: 2618637810728357437}
-  esperaAtaque: 5
-  cantidadAtaques: 7
-  fuenteAudio: {fileID: 3213204783183563858}
-  sonidoDanio: {fileID: 0}
-  sonidoDestruccion: {fileID: 0}
 --- !u!135 &130687515820036946
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -81,7 +63,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 94
   m_CollisionDetection: 0
 --- !u!82 &3213204783183563858
 AudioSource:
@@ -179,6 +161,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8795510980879090114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794375223384264217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d094813e60724d94384107216d6beaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulas: {fileID: 2618637810728357437}
+  esperaAtaque: 5
+  cantidadAtaques: 10
+  fuenteAudio: {fileID: 3213204783183563858}
+  sonidoDanio: {fileID: 8300000, guid: 27f33c7ed38d6e54782acc23ce94e73a, type: 3}
+  sonidoDestruccion: {fileID: 8300000, guid: d12751f2c96c12443b75d9aa70c94083, type: 3}
 --- !u!1001 &1558125805154128697
 PrefabInstance:
   m_ObjectHideFlags: 0

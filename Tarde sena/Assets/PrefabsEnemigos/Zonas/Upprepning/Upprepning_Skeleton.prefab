@@ -2223,7 +2223,7 @@ MonoBehaviour:
   - FactionIndex: 5
     RelationTypeRef: 0
   PlayerFaction:
-  - PlayerTag: Untagged
+  - PlayerTag: Player
     RelationTypeRef: 0
   StartingRunSpeed: 0
   StartingRunAnimationSpeed: 0
