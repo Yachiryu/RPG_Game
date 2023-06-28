@@ -41,6 +41,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void ReanudarTiempo()
+    {
+        Time.timeScale = 1f;
+    }
+
     private void DesactivarObjetos()
     {
         foreach (GameObject objeto in objetosADesactivar)

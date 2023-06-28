@@ -46,7 +46,7 @@ public class Slot : MonoBehaviour
         muricionArma -= cantidad;
         if (muricionArma <= 0)
         {
-            armaTwohandSword = null;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Ataque>().DestruirArma();
             inventario.RemoveItem(slotProperties, 1);
         }
     }

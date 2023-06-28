@@ -12,18 +12,24 @@ public class Vida : MonoBehaviour
     public RPGCharacterController rpgCharacterController;
 
     public int vida = 100;
-    int contadorVida;
+    [SerializeField]private int contadorVida;
     public Slider barravida;
 
     void Start()
     {
-        rpgCharacterController = GetComponent<RPGCharacterController>();
-        contadorVida = vida;
+        if (CompareTag("Player"))
+        {
+            rpgCharacterController = GetComponent<RPGCharacterController>();
+            barravida.maxValue = vida;
+            barravida.value = vida;
+            contadorVida = vida;
+        }
     }
 
     public void ManejoVida(int cantidad)
     {
         contadorVida += cantidad;
+        barravida.value = contadorVida;
         contadorVida = Mathf.Clamp(contadorVida,0,vida);
         if (contadorVida > 0)
         {
@@ -38,7 +44,7 @@ public class Vida : MonoBehaviour
     IEnumerator CRecargarEscenaEnMuerte()
     {
         rpgCharacterController.StartAction(HandlerTypes.Knockdown, new HitContext((int)KnockdownType.Knockdown1, Vector3.back));
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

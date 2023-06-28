@@ -169,7 +169,7 @@ public class spawnmanager : MonoBehaviour
         while (inicioOleada && !puertaCerrada)
         {
             yield return new WaitForSeconds(1);
-            jugador.ManejoVida(2);
+            jugador.ManejoVida(-2);
         }
     }
 

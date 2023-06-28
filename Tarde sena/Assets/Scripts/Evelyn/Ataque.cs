@@ -71,6 +71,18 @@ public class Ataque : MonoBehaviour
         }
     }
 
+    public void DestruirArma()
+    {
+        armaActual = null;
+        for (int i = 0; i < armas.childCount; i++)
+        {
+            if (armas.GetChild(i).gameObject.activeInHierarchy)
+            {
+                armas.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

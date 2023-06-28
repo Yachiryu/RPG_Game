@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo:
     contenedor:
+    - texto: Al derrotar al boss te dara un Cristal para pasar de mapa
+      audioTexto: {fileID: 0}
     - texto: Cuando entres al portal abre el inventario
       audioTexto: {fileID: 0}
     - texto: "Ve a la secci\xF3n de item y selecciona el cristal"
