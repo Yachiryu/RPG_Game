@@ -176,7 +176,6 @@ public class Inventory : MonoBehaviour
             case ItemProperties.Tipo.resources:
                 break;
             case ItemProperties.Tipo.item:
-                print("ACA ESTOOOOOOOOOOOOOOOOy0");
                 if (itempro.nombre == "Posion")
                 {
                     vida.ManejoVida(itempro.regeneracionVida);
@@ -197,7 +196,6 @@ public class Inventory : MonoBehaviour
                 }
                 else if (itempro.nombre == "Cristal")
                 {
-                    print("ACA ESTOOOOOOOOOOOOOOOOy1");
                     GameObject pasarNivel = GameObject.FindGameObjectWithTag("PortalPasarNivel");
                     if (pasarNivel.GetComponent<PortalPasarNivel>().habilitado)
                     {
