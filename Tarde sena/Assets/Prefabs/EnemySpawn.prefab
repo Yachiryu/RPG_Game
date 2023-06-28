@@ -75,6 +75,12 @@ MonoBehaviour:
     prefabEnemigos:
     - {fileID: 1914898760154058836, guid: 21077e8edf98d7441b396a4104e16abc, type: 3}
     - {fileID: 6879917350300084751, guid: c129313a812d89446990766d39039f39, type: 3}
+  - sceneName: Zona3
+    boss:
+    - {fileID: 2258989399929811620, guid: 6869918f448f5a142a23c668bd2c6164, type: 3}
+    prefabEnemigos:
+    - {fileID: 2287654580478726501, guid: 225f764c49f5bd247af0bf3796b5ffb8, type: 3}
+    - {fileID: 383705318832063597, guid: 469cbb728098de7479d52555e6f970a3, type: 3}
   enemisPrefb: []
   currentEnemigosSpawn: 0
   boss: 0
