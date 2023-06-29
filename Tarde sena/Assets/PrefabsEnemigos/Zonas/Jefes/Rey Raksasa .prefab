@@ -1806,8 +1806,8 @@ MonoBehaviour:
   MeleeAttackPickType: 1
   MeleeAttacks:
   - AttackAnimaition: 0
-    MinDamage: 5
-    MaxDamage: 10
+    MinDamage: 10
+    MaxDamage: 20
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
   MeleeAttacksListIndex: 0
@@ -2259,13 +2259,13 @@ MonoBehaviour:
   ObstructionDetectionUpdateSeconds: 0.1
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
-  StartingHealth: 60
+  StartingHealth: 100
   DetectionRadius: 18
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
   TabNumber: 1
-  TemperamentTabNumber: 0
+  TemperamentTabNumber: 2
   DetectionTagsTabNumber: 0
   AnimationTabNumber: 2
   SoundTabNumber: 0

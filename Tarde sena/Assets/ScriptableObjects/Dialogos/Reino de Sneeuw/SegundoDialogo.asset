@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5b6d48a64a1742920859013d7cee0, type: 3}
+  m_Name: SegundoDialogo
+  m_EditorClassIdentifier: 
+  dialogo:
+    contenedor:
+    - texto: "Por un momento pens\xE9 que de verdad hab\xEDas derrotado al Rey Raksasa,
+        el due\xF1o de los cristales, pero ser\xEDa rid\xEDculo que estuviera"
+      audioTexto: {fileID: 0}
+    - texto: "en un lugar como este, no podr\xEDas tener tanta suerte. Aunque si
+        me causa bastante curiosidad el porqu\xE9 tendr\xEDa un doble en este sitio."
+      audioTexto: {fileID: 0}
+    - texto: "En fin, lo bueno es que conseguiste el cristal, podr\xE1s avanzar a
+        la siguiente zona"
+      audioTexto: {fileID: 0}
+    - texto: "donde seguramente te enfrentar\xE1s al verdadero rey y no ser\xE1 una
+        pelea f\xE1cil. Que bueno que no estoy en tu lugar."
+      audioTexto: {fileID: 0}

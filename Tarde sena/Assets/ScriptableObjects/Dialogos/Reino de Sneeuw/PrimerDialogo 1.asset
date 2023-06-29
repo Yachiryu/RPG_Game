@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5b6d48a64a1742920859013d7cee0, type: 3}
+  m_Name: PrimerDialogo 1
+  m_EditorClassIdentifier: 
+  dialogo:
+    contenedor:
+    - texto: "\xA1Uy! Definitivamente no pens\xE9 que llegar\xEDas tan r\xE1pido
+        a este lugar, cada vez todo me parece m\xE1s familiar."
+      audioTexto: {fileID: 0}
+    - texto: "Est\xE1s en el reino de Sneeuw, conocido por ser la zona industrial
+        de este extra\xF1o lugar"
+      audioTexto: {fileID: 0}
+    - texto: "al menos lo era; parece que ahora no es m\xE1s que un lugar desolado.
+        Aunque te aconsejo que no te conf\xEDes"
+      audioTexto: {fileID: 0}
+    - texto: "pues como te dije antes, seguramente todo ser\xE1 m\xE1s dif\xEDcil
+        ahora."
+      audioTexto: {fileID: 0}

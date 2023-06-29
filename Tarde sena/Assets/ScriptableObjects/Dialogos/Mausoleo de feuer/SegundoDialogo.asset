@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5b6d48a64a1742920859013d7cee0, type: 3}
+  m_Name: SegundoDialogo
+  m_EditorClassIdentifier: 
+  dialogo:
+    contenedor:
+    - texto: "Este es el final de tu viaje y ahora al estar aqu\xED contigo siento
+        que de alguna manera yo estuve en tu lugar, incluyendo tu mala suerte."
+      audioTexto: {fileID: 0}
+    - texto: "Aunque hasta donde s\xE9, no hay registro de que alguien haya llegado
+        tan lejos en b\xFAsqueda de los cristales."
+      audioTexto: {fileID: 0}
+    - texto: "Si yo estuviera en tu lugar, har\xEDa todo mejor, eso es seguro. En
+        fin, detr\xE1s de esa puerta estar\xE1 el rey Raksasa"
+      audioTexto: {fileID: 0}
+    - texto: solo espero que lo derrotes y que cumplas tu deseo, para que podamos
+        salir de este embrollo.
+      audioTexto: {fileID: 0}
