@@ -81,6 +81,14 @@ MonoBehaviour:
     prefabEnemigos:
     - {fileID: 2287654580478726501, guid: 225f764c49f5bd247af0bf3796b5ffb8, type: 3}
     - {fileID: 383705318832063597, guid: 469cbb728098de7479d52555e6f970a3, type: 3}
+  - sceneName: MausoleodeFeuer
+    boss:
+    - {fileID: 7065647124000128534, guid: 783233517a4245d429ab7f3d7af25c53, type: 3}
+    prefabEnemigos:
+    - {fileID: 2287654580478726501, guid: 225f764c49f5bd247af0bf3796b5ffb8, type: 3}
+    - {fileID: 383705318832063597, guid: 469cbb728098de7479d52555e6f970a3, type: 3}
+    - {fileID: 2219478789240108479, guid: c435416dd8a17d945a06df4a86d63a4e, type: 3}
+    - {fileID: 3361065332628680309, guid: 856dd3cff90d2104a8c15b85bce72cc2, type: 3}
   enemisPrefb: []
   currentEnemigosSpawn: 0
   boss: 0

@@ -631,7 +631,7 @@ MonoBehaviour:
   EmeraldTag: Respawn
   UITag: Player
   RagdollTag: Untagged
-  AnimationsUpdated: 1
+  AnimationsUpdated: 0
   RayCastUpdateSeconds: 0.1
   ObstructionDetectionUpdateSeconds: 0.1
   ObstructionDetectionUpdateTimer: 0
@@ -993,7 +993,7 @@ MonoBehaviour:
     m_Bits: 4294967295
 --- !u!95 &5845645685896197844
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1010,7 +1010,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!65 &5755312837807849143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1236,6 +1236,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b387477a25da4d741992ccf830c3100d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rpgCharacterController: {fileID: 0}
+  vida: 100
+  contadorVida: 0
+  barravida: {fileID: 0}
 --- !u!114 &5482593276863553804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,6 +1252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5159977f33152408d29cbd8c424326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centroGolpe: {fileID: 5966254644122969009}
+  radioGolpe: 0.96
+  iA: {fileID: 7527533113701355700}
 --- !u!1 &399181487599053543
 GameObject:
   m_ObjectHideFlags: 0
