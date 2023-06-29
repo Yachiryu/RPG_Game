@@ -49,7 +49,7 @@ public class DoorPlataforme : MonoBehaviour
             }
             if (contador>=1)
             {
-                fuenteAudio.Stop();
+                //fuenteAudio.Stop();
                 contador = 0;
                 //fuenteAudio.Pause();
                 andando = false;

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZonaUpprepnig.unity
     guid: 423e8558cc4c7114aaa0e85f64c42701
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 1f212f9f3445b2748acfc061d8399104
   m_configObjects: {}

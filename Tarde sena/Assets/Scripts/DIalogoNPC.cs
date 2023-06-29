@@ -16,7 +16,7 @@ public class DIalogoNPC : MonoBehaviour
     public GameObject image;
 
     public bool tutorial;
-    public GameObject[] muros;
+    public GameObject muros;
     void Start()
     {
         GameManager.Instance.OnDialogo += ActivarDialogo; // Se subscribe al evento OnDialogo
@@ -33,7 +33,7 @@ public class DIalogoNPC : MonoBehaviour
     {
         GameManager.Instance.enDialogo = true;
         if (tutorial)
-            MurosTutorial(true);
+            muros.SetActive(true);
         image.SetActive(true);
         yield return new WaitForSeconds(1);
         foreach (var item in lista.contenedor)
@@ -45,16 +45,10 @@ public class DIalogoNPC : MonoBehaviour
         }
         texto.text = "";
         if (tutorial)
-            MurosTutorial(false);
+            muros.SetActive(false);
         image.SetActive(false);
         GameManager.Instance.enDialogo = false;
     } 
 
-    void MurosTutorial(bool activar)
-    {
-        foreach (var item in muros)
-        {
-            item.SetActive(activar);
-        }
-    }
+
 }

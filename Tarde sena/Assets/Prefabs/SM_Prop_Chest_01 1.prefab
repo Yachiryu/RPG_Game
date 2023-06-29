@@ -328,9 +328,6 @@ MonoBehaviour:
   objetosFijos: []
   openEfect: {fileID: 4180341651020375448}
   rotar: {fileID: 1237375745495069839}
-  meshBossCofre:
-    meshCofre: {fileID: 4300000, guid: 10736031d03b05145aa00c737e533cb4, type: 3}
-    meshTapaCofre: {fileID: 4300002, guid: 10736031d03b05145aa00c737e533cb4, type: 3}
   fuenteAudio: {fileID: 8980820248519316629}
 --- !u!65 &8268848261294364405
 BoxCollider:
@@ -401,7 +398,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

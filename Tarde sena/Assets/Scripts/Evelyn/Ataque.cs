@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using RPGCharacterAnims;
+using RPGCharacterAnims.Lookups;
+using RPGCharacterAnims.Actions;
 
 public class Ataque : MonoBehaviour
 {
@@ -13,14 +16,10 @@ public class Ataque : MonoBehaviour
     public float radioGolpe;
 
     private GameObject armaActual;
-    
-   
-    void Start()
-    {
-        
-    }
 
-    
+    Slot slot;
+
+    public Slider barraDesgasteArma;
     void Update()
     {
         if (onAttack)
@@ -32,7 +31,7 @@ public class Ataque : MonoBehaviour
                 onAttack = false;
                 tiempoEspera = 0;
             }
-        } 
+        }
     }
 
     public void Attack()
@@ -54,6 +53,7 @@ public class Ataque : MonoBehaviour
 
             Collider[] objetos = Physics.OverlapSphere(centroGolpe.position, radioGolpe);
 
+            bool golpe = true;
             foreach (Collider collisionador in objetos)
             {
                 if(collisionador.CompareTag("enemis"))
@@ -61,19 +61,24 @@ public class Ataque : MonoBehaviour
                     if (!collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().IsDead)
                     {
                         collisionador.GetComponent<EmeraldAI.EmeraldAISystem>().Damage(proItem.danio, null, transform);
-
+                    }
+                    if (golpe)
+                    {
+                        golpe = false;
+                        slot = armaActual.GetComponent<Item>().slot;
+                        slot.armaTwohandSword = armaActual;
+                        slot.UpdateUsoArma(proItem.velDesgateArma);
+                        barraDesgasteArma.maxValue = slot.slotProperties.desgasteArma;
+                        barraDesgasteArma.value = slot.muricionArma;
                     }
                 }
             }
-            Slot slot = armaActual.GetComponent<Item>().slot;
-            slot.armaTwohandSword = armaActual;
-            slot.UpdateUsoArma(proItem.velDesgateArma);
         }
     }
 
     public void DestruirArma()
     {
-        armaActual = null;
+        transform.GetComponent<RPGCharacterWeaponController>().twoHandSword = null;
         for (int i = 0; i < armas.childCount; i++)
         {
             if (armas.GetChild(i).gameObject.activeInHierarchy)
@@ -81,6 +86,7 @@ public class Ataque : MonoBehaviour
                 armas.GetChild(i).gameObject.SetActive(false);
             }
         }
+        GetComponent<RPGCharacterController>().TryStartAction(HandlerTypes.SwitchWeapon, new SwitchWeaponContext());
     }
 
     private void OnDrawGizmos()

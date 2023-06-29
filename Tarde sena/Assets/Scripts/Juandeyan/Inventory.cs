@@ -96,6 +96,9 @@ public class Inventory : MonoBehaviour
 
             Slot slotAdd = slots[item.type][i].GetComponent<Slot>();
 
+            print(slotAdd.transform.parent);
+            print(slotAdd.slotProperties.name);
+            print(item.name);
             if (slotAdd.slotProperties.nombre == item.nombre && slotAdd.numberOfObjects < maxNumberObj)
             {
                 slotAdd.numberOfObjects++;

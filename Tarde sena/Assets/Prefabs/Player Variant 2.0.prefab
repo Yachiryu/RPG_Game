@@ -592,7 +592,7 @@ MonoBehaviour:
   debugDoWeaponSwitch: 1
   debugWeaponVisibility: 1
   debugSetAnimator: 1
-  twoHandSword: {fileID: 0}
+  twoHandSword: {fileID: 5176417706709087162}
 --- !u!54 &8900407873786679800
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -703,6 +703,7 @@ MonoBehaviour:
   centroGolpe: {fileID: 5176417705860814281}
   armas: {fileID: 8900407874119261641}
   radioGolpe: 1.19
+  barraDesgasteArma: {fileID: 0}
 --- !u!114 &7743910529195163395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rpgCharacterController: {fileID: 8900407873798571896}
   vida: 100
+  contadorVida: 0
   barravida: {fileID: 0}
 --- !u!114 &8238179810643864646
 MonoBehaviour:
@@ -7370,6 +7372,11 @@ PrefabInstance:
 --- !u!4 &5176417706708789056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422976, guid: 155a426b75b059643aae0b747f17056d, type: 3}
+  m_PrefabInstance: {fileID: 5176417706708898560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5176417706709087162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 188602, guid: 155a426b75b059643aae0b747f17056d, type: 3}
   m_PrefabInstance: {fileID: 5176417706708898560}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5176417706731270990

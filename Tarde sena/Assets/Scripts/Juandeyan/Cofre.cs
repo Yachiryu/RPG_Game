@@ -85,6 +85,7 @@ public class Cofre : MonoBehaviour
                         int num = Random.Range(1, 4);
                         for (int j = 0; j < num; j++)
                         {
+                            print(objectsOfRandomChest[objetos[i]]);
                             other.GetComponent<Inventory>().AddItem(objectsOfRandomChest[objetos[i]]);
                         }
                     }

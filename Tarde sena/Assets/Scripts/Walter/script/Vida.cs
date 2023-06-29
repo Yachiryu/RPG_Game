@@ -14,6 +14,7 @@ public class Vida : MonoBehaviour
     public int vida = 100;
     [SerializeField]private int contadorVida;
     public Slider barravida;
+   
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class Vida : MonoBehaviour
         rpgCharacterController.StartAction(HandlerTypes.Knockdown, new HitContext((int)KnockdownType.Knockdown1, Vector3.back));
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
    public void EventoMuerteIA(GameObject obj)

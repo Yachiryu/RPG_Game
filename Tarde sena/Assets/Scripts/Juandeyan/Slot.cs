@@ -30,6 +30,8 @@ public class Slot : MonoBehaviour
         slotIconGameObject = transform.GetChild(0);
         if (slotProperties == null)
             slotProperties = slotVacio;
+        else
+            empty = false;
         UpdateSlot();
         UpdateNumberObj();
     }
@@ -48,6 +50,7 @@ public class Slot : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Ataque>().DestruirArma();
             inventario.RemoveItem(slotProperties, 1);
+            muricionArma = slotProperties.desgasteArma;
         }
     }
 
