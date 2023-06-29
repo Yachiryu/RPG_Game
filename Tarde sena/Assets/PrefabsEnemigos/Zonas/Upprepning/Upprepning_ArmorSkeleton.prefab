@@ -1230,8 +1230,8 @@ MonoBehaviour:
   MeleeAttackPickType: 1
   MeleeAttacks:
   - AttackAnimaition: 0
-    MinDamage: 1
-    MaxDamage: 1
+    MinDamage: 5
+    MaxDamage: 5
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
   MeleeAttacksListIndex: 0
@@ -1681,13 +1681,13 @@ MonoBehaviour:
   ObstructionDetectionUpdateSeconds: 0.1
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
-  StartingHealth: 15
+  StartingHealth: 30
   DetectionRadius: 18
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 2
-  TemperamentTabNumber: 5
+  TabNumber: 1
+  TemperamentTabNumber: 0
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 2
   SoundTabNumber: 1
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   TargetTypeRef: 0
   CombatStateRef: 0
   CombatTypeRef: 0
-  RefillHealthType: 2
+  RefillHealthType: 0
   WanderTypeRef: 0
   WaypointTypeRef: 0
   AlignmentQualityRef: 1
@@ -2286,6 +2286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rpgCharacterController: {fileID: 0}
   vida: 100
+  contadorVida: 0
   barravida: {fileID: 0}
 --- !u!114 &8592602163085010429
 MonoBehaviour:
