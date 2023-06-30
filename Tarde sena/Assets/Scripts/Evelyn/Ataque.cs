@@ -8,7 +8,7 @@ using RPGCharacterAnims.Actions;
 
 public class Ataque : MonoBehaviour
 {
-    [SerializeField] private Transform centroGolpe, armas;
+    [SerializeField] public Transform centroGolpe, armas;
     internal float esperaArma;
     private float tiempoEspera;
     

@@ -29,3 +29,5 @@ MonoBehaviour:
       audioTexto: {fileID: 0}
     - texto: y con suerte, no convertirte en uno de esos muertos vivientes.
       audioTexto: {fileID: 0}
+    - texto: Si no recuerdo mal es izquierda, derecha, centro
+      audioTexto: {fileID: 0}

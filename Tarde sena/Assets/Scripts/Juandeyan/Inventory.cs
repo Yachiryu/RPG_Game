@@ -167,12 +167,25 @@ public class Inventory : MonoBehaviour
         switch (itempro.type)
         {
             case ItemProperties.Tipo.weapon:
-                for (int i = 0; i < padreArmas.childCount; i++)
+                bool ocupado = false;
+                for (int i = 0; i < transform.GetComponent<Ataque>().armas.childCount; i++)
                 {
-                    if (padreArmas.GetChild(i).gameObject.name == itempro.objetoAsociado.name)
+                    if (transform.GetComponent<Ataque>().armas.GetChild(i).gameObject.activeInHierarchy==true)
                     {
-                        weaponManager.twoHandSword = padreArmas.GetChild(i).gameObject;
-                        weaponManager.twoHandSword.GetComponent<Item>().slot = item; 
+
+                        ocupado = true;
+                        print($"Ocupado {transform.GetComponent<Ataque>().armas.GetChild(i).gameObject.name}");
+                    }
+                }
+                if (!ocupado)
+                {
+                    for (int i = 0; i < padreArmas.childCount; i++)
+                    {
+                        if (padreArmas.GetChild(i).gameObject.name == itempro.objetoAsociado.name)
+                        {
+                            weaponManager.twoHandSword = padreArmas.GetChild(i).gameObject;
+                            weaponManager.twoHandSword.GetComponent<Item>().slot = item; 
+                        }
                     }
                 }
                 break;

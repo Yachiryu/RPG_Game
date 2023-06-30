@@ -26,3 +26,6 @@ MonoBehaviour:
     - texto: "pues como te dije antes, seguramente todo ser\xE1 m\xE1s dif\xEDcil
         ahora."
       audioTexto: {fileID: 0}
+    - texto: Si mal no recuerdo, el orden es esquina izquierda, esquina derecha,
+        atras en el cementerio y al fondo en las minas
+      audioTexto: {fileID: 0}
