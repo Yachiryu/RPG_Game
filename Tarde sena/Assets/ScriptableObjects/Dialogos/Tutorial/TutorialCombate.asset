@@ -18,3 +18,5 @@ MonoBehaviour:
       audioTexto: {fileID: 0}
     - texto: "Abre el inventario y busca en la secci\xF3n de armas y selecciona una"
       audioTexto: {fileID: 0}
+    - texto: "Sin arma, no podras hacer da\xF1o"
+      audioTexto: {fileID: 0}

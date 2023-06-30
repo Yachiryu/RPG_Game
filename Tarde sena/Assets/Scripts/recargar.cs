@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class recargar : MonoBehaviour
 {
+    public string nombreEscena;
     private void Update()
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(nombreEscena);
         }
     }
 }

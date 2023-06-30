@@ -20,7 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZonaUpprepnig.unity
     guid: 423e8558cc4c7114aaa0e85f64c42701
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Loading.unity
-    guid: 1f212f9f3445b2748acfc061d8399104
+    path: Assets/Scenes/zona_2.unity
+    guid: fa1342b7d0488534d8837a5f15b37e59
+  - enabled: 1
+    path: Assets/Scenes/Zona3.unity
+    guid: e9991675b5b4f8d42903832a2efd2a56
+  - enabled: 1
+    path: Assets/PolygonDungeonMap/Scene/MausoleodeFeuer.unity
+    guid: 64e8b48be3e73f04988104912777a61e
   m_configObjects: {}
